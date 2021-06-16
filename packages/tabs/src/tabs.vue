@@ -152,6 +152,7 @@
         <div class={['el-tabs__header', `is-${tabPosition}`]}>
           {newButton}
           <tab-nav { ...navData }></tab-nav>
+          {this.$slots.header}
         </div>
       );
       const panels = (
@@ -171,7 +172,7 @@
         </div>
       );
     },
-  
+
     created() {
       if (!this.currentName) {
         this.setCurrentName('0');

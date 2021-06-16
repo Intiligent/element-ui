@@ -21,7 +21,50 @@ Basic and concise tabs.
   export default {
     data() {
       return {
-        activeName: 'first'
+        activeName: 'first',
+      };
+    },
+    methods: {
+      handleClick(tab, event) {
+        console.log(tab, event);
+      }
+    }
+  };
+</script>
+```
+:::
+
+### Slot usage
+
+Basic and concise tabs.
+
+:::demo Tabs provide exmaple of slot used. Add some tag with `slot="header"`
+
+```html
+<template>
+    <el-radio-group v-model="position" style="margin-bottom: 20px;">
+        <el-radio label="left">Left</el-radio>
+        <el-radio label="right">Right</el-radio>
+        <el-radio label="top">Top</el-radio>
+        <el-radio label="bottom">Bottom</el-radio>
+    </el-radio-group>
+
+  <el-tabs :tab-position="position" v-model="activeName" @tab-click="handleClick">
+    <el-tab-pane label="User" name="first">User</el-tab-pane>
+    <el-tab-pane label="Config" name="second">Config</el-tab-pane>
+    <el-tab-pane label="Role" name="third">Role</el-tab-pane>
+    <el-tab-pane label="Task" name="fourth">Task</el-tab-pane>
+    <div class="custome-class" slot="header" style="margin-top: 20px;">
+        <el-button>Add new +</el-button>
+    </div>
+  </el-tabs>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        position: 'left',
+        activeName: 'first',
       };
     },
     methods: {
@@ -192,7 +235,7 @@ Only card type Tabs support addable & closeable.
               }
             });
           }
-          
+
           this.editableTabsValue = activeName;
           this.editableTabs = tabs.filter(tab => tab.name !== targetName);
         }
@@ -265,7 +308,7 @@ Only card type Tabs support addable & closeable.
             }
           });
         }
-        
+
         this.editableTabsValue = activeName;
         this.editableTabs = tabs.filter(tab => tab.name !== targetName);
       }
@@ -303,3 +346,8 @@ Only card type Tabs support addable & closeable.
 | name      | identifier corresponding to the name of Tabs, representing the alias of the tab-pane | string | — | ordinal number of the tab-pane in the sequence, e.g. the first tab-pane is '1' |
 | closable  | whether Tab is closable | boolean   | — |  false  |
 | lazy  | whether Tab is lazily rendered   | boolean   | — |  false  |
+
+### Slots
+| slot      | Description            |
+|---------- | ---------------------- |
+| header     | header content          |
