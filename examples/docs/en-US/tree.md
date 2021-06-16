@@ -783,6 +783,41 @@ You can drag and drop Tree nodes by adding a `draggable` attribute.
 ```
 :::
 
+### Empty slot
+
+Using slot for empty data.
+
+:::demo
+```html
+<el-tree :data="dataEmpty" :props="defaultProps" @node-click="handleNodeClick">
+    <span slot="empty">Empty slot value or <code>empty-text</code></span>
+</el-tree>
+
+<el-tree :data="dataEmpty" :props="defaultProps" @node-click="handleNodeClick" empty-text="Empty text"></el-tree>
+
+<el-tree :data="dataEmpty" :props="defaultProps" @node-click="handleNodeClick"></el-tree>
+
+<script>
+  export default {
+    data() {
+      return {
+        dataEmpty: [],
+        defaultProps: {
+          children: 'children',
+          label: 'label'
+        }
+      };
+    },
+    methods: {
+      handleNodeClick(data) {
+        console.log(data);
+      }
+    }
+  };
+</script>
+```
+:::
+
 ### Attributes
 | Attribute             | Description                              | Type                        | Accepted Values | Default |
 | --------------------- | ---------------------------------------- | --------------------------- | --------------- | ------- |
@@ -859,6 +894,11 @@ You can drag and drop Tree nodes by adding a `draggable` attribute.
 | node-drag-over | triggers when dragging over a node (like mouseover event) | three parameters: node object corresponding to the dragging node, node object corresponding to the dragging over node, event.  |
 | node-drag-end  | triggers when dragging ends  | four parameters: node object corresponding to the dragging node, node object corresponding to the dragging end node (may be `undefined`), node drop type (before / after / inner), event. |
 | node-drop  | triggers after the dragging node is dropped | four parameters: node object corresponding to the dragging node, node object corresponding to the dropped node, node drop type (before / after / inner), event. |
+
+### Slots
+| Name | Description |
+|------|--------|
+| empty | Custom content for empty data |
 
 ### Scoped Slot
 | Name | Description |
