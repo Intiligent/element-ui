@@ -36,7 +36,7 @@ Basic and concise tabs.
 
 ### Slot usage
 
-Basic and concise tabs.
+Basic slot tabs.
 
 :::demo Tabs provide exmaple of slot used. Add some tag with `slot="header"`
 
