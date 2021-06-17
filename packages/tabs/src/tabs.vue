@@ -48,6 +48,7 @@
           this.$nextTick(() => {
             this.$refs.nav.$nextTick(_ => {
               this.$refs.nav.scrollToActiveTab();
+              this.$emit('change', value);
             });
           });
         }

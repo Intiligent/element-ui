@@ -258,7 +258,7 @@ Only card type Tabs support addable & closeable.
     add tab
   </el-button>
 </div>
-<el-tabs v-model="editableTabsValue" type="card" closable @tab-remove="removeTab">
+<el-tabs v-model="editableTabsValue" type="card" closable @tab-remove="removeTab" @change="handleChange">
   <el-tab-pane
     v-for="(item, index) in editableTabs"
     :key="item.name"
@@ -295,6 +295,7 @@ Only card type Tabs support addable & closeable.
         });
         this.editableTabsValue = newTabName;
       },
+
       removeTab(targetName) {
         let tabs = this.editableTabs;
         let activeName = this.editableTabsValue;
@@ -311,8 +312,12 @@ Only card type Tabs support addable & closeable.
 
         this.editableTabsValue = activeName;
         this.editableTabs = tabs.filter(tab => tab.name !== targetName);
-      }
-    }
+      },
+
+      handleChange(event) {
+        console.log('handleChange', event);
+      },
+    },
   }
 </script>
 ```
@@ -333,6 +338,7 @@ Only card type Tabs support addable & closeable.
 ### Tabs Events
 | Event Name | Description | Parameters |
 |---------- |-------- |---------- |
+| change | triggers when a tab is clicked, added new, remove current | (currentName) |
 | tab-click  | triggers when a tab is clicked | clicked tab |
 | tab-remove  | triggers when tab-remove button is clicked | name of the removed tab |
 | tab-add  | triggers when tab-add button is clicked  | — |
