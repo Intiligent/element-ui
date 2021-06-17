@@ -6,12 +6,13 @@
 
 @include b(message-box) {
   display: inline-block;
-  width: $--msgbox-width;
-  padding-bottom: 10px;
+  width: 100%;
+  max-width: $--messagebox-width;
+  padding: $--messagebox-padding;
   vertical-align: middle;
   background-color: $--color-white;
-  border-radius: $--msgbox-border-radius;
-  border: 1px solid $--border-color-lighter;
+  border: $--messagebox-border;
+  border-radius: $--messagebox-border-radius;
   font-size: $--messagebox-font-size;
   box-shadow: $--box-shadow-light;
   text-align: left;
@@ -37,22 +38,22 @@
 
   @include e(header) {
     position: relative;
-    padding: $--msgbox-padding-primary;
-    padding-bottom: 10px;
+    padding: $--messagebox-header-padding;
   }
 
   @include e(title) {
     padding-left: 0;
     margin-bottom: 0;
     font-size: $--messagebox-font-size;
+    font-weight: $--messagebox-font-weigh;
     line-height: 1;
     color: $--messagebox-title-color;
   }
 
   @include e(headerbtn) {
     position: absolute;
-    top: $--msgbox-padding-primary;
-    right: $--msgbox-padding-primary;
+    top: $--messagebox-padding-primary;
+    right: $--messagebox-padding-primary;
     padding: 0;
     border: none;
     outline: none;
@@ -73,11 +74,11 @@
   }
 
   @include e(content) {
-    padding: 10px $--msgbox-padding-primary;
+    padding: $--messagebox-content-padding;
     color: $--messagebox-content-color;
     font-size: $--messagebox-content-font-size;
   }
-  
+
   @include e(container) {
     position: relative;
   }
@@ -143,7 +144,7 @@
   }
 
   @include e(btns) {
-    padding: 5px 15px 0;
+    padding: $--messagebox-buttons-padding;
     text-align: right;
 
     & button:nth-child(2) {
@@ -157,7 +158,7 @@
 
   // centerAlign 布局
   @include m(center) {
-    padding-bottom: 30px;
+    // padding-bottom: 30px;
 
     @include e(header) {
       padding-top: 30px;
@@ -187,23 +188,43 @@
     }
 
     @include e(content) {
-      $padding-horizontal: $--msgbox-padding-primary + 12px;
+      $padding-horizontal: $--messagebox-padding-primary + 12px;
 
       padding-left: $padding-horizontal;
       padding-right: $padding-horizontal;
     }
   }
+
+  // Size
+  @include m(default) {
+    max-width: $--messagebox-width;
+  }
+  @include m(mini) {
+    max-width: $--xs;
+  }
+  @include m(small) {
+    max-width: $--sm;
+  }
+  @include m(medium) {
+    max-width: $--md;
+  }
+  @include m(large) {
+    max-width: $--lg;
+  }
+  @include m(xlarge) {
+    max-width: $--xl;
+  }
 }
 
-.msgbox-fade-enter-active {
-  animation: msgbox-fade-in .3s;
+.messagebox-fade-enter-active {
+  animation: messagebox-fade-in .3s;
 }
 
-.msgbox-fade-leave-active {
-  animation: msgbox-fade-out .3s;
+.messagebox-fade-leave-active {
+  animation: messagebox-fade-out .3s;
 }
 
-@keyframes msgbox-fade-in {
+@keyframes messagebox-fade-in {
   0% {
     transform: translate3d(0, -20px, 0);
     opacity: 0;
@@ -214,7 +235,7 @@
   }
 }
 
-@keyframes msgbox-fade-out {
+@keyframes messagebox-fade-out {
   0% {
     transform: translate3d(0, 0, 0);
     opacity: 1;

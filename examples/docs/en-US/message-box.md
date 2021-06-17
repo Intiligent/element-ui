@@ -40,7 +40,7 @@ Alert interrupts user operation until the user confirms.
 
 Confirm is used to ask users' confirmation.
 
-:::demo Call `$confirm` method to open a confirm, and it simulates the system's `confirm`. We can also highly customize Message Box by passing a third attribute `options` which is a literal object. The attribute `type` indicates the message type, and it's value can be `success`, `error`, `info` and `warning`. Note that the second attribute `title` must be a `string`, and if it is an `object`, it will be handled as the attribute `options`. Here we use `Promise` to handle further processing. 
+:::demo Call `$confirm` method to open a confirm, and it simulates the system's `confirm`. We can also highly customize Message Box by passing a third attribute `options` which is a literal object. The attribute `type` indicates the message type, and it's value can be `success`, `error`, `info` and `warning`. Note that the second attribute `title` must be a `string`, and if it is an `object`, it will be handled as the attribute `options`. Here we use `Promise` to handle further processing.
 
 ```html
 <template>
@@ -275,6 +275,144 @@ Content of MessageBox can be centered.
 ```
 :::
 
+### Multiple nested message box
+
+Stack modal provide one modal under the other modal.
+
+:::demo To make nested modal need pass prop `stack=true` for each other nested modal. Modal will be opened on by one and has one general overlay.
+
+```html
+<template>
+    <el-button type="text" @click="open">Click to open the Message Box</el-button>
+</template>
+
+<script>
+export default {
+    methods: {
+        open() {
+            this.$confirm('This is a message', 'Title', {
+                confirmButtonText: 'OK',
+            }).catch((action) => {
+                console.log('action Cancel 1 modal', action);
+            });
+            setTimeout(() => {
+                this.$confirm('To make nested modal need pass prop <code>stack=true<code> for each other nested modal. Modal will be opened on by one and has one general overlay.', 'Nested modal', {
+                    confirmButtonText: 'OK',
+                    stack: true,
+                }).catch((action) => {
+                    console.log('action Cancel 2 modal', action);
+                });
+            }, 2000);
+        }
+    }
+}
+</script>
+```
+:::
+
+### Custome content (without bottom buttons block)
+
+Using custom components.
+
+:::demo To hide buttons container pass prop `showConfirmButton: false`.
+
+```html
+<template>
+    <el-button type="text" @click="open">Click to open the Message Box</el-button>
+</template>
+
+<script>
+export default {
+    methods: {
+        open() {
+            const h = this.$createElement;
+            this.$msgbox({
+                title: 'Custome modal content',
+                message: h('p', null, [
+                    h('span', null, 'Message can be '),
+                    h('i', { style: 'color: teal' }, 'VNode')
+                ]),
+                showConfirmButton: false,
+            }).then(action => {
+                this.$message({
+                    type: 'info',
+                    message: 'action: ' + action
+                });
+            });
+        }
+    }
+}
+</script>
+```
+:::
+
+### Modal size
+
+Using custom components.
+
+:::demo To hide buttons container pass prop `showConfirmButton: false`.
+
+```html
+<template>
+    <el-button type="text" @click="open">Default size</el-button>
+    <el-button type="text" @click="openMini">Mini size</el-button>
+    <el-button type="text" @click="openSmall">Small size</el-button>
+    <el-button type="text" @click="openMedium">Medium size</el-button>
+    <el-button type="text" @click="openLarge">Large size</el-button>
+</template>
+
+<script>
+export default {
+    methods: {
+        open() {
+            const h = this.$createElement;
+            this.$msgbox({
+                title: 'Default modal size',
+                message: 'Different modal size',
+            });
+        },
+
+        openMini() {
+            const h = this.$createElement;
+            this.$msgbox({
+                title: 'Mini modal size',
+                message: 'Different modal size',
+                size: 'mini',
+            });
+        },
+
+        openSmall() {
+            const h = this.$createElement;
+            this.$msgbox({
+                title: 'Small modal size',
+                message: 'Different modal size',
+                size: 'small',
+            });
+        },
+
+        openMedium() {
+            const h = this.$createElement;
+            this.$msgbox({
+                title: 'Medium modal size',
+                message: 'Different modal size',
+                size: 'medium',
+            });
+        },
+
+        openLarge() {
+            const h = this.$createElement;
+            this.$msgbox({
+                title: 'Large modal size',
+                message: 'Different modal size',
+                size: 'large',
+            });
+        },
+    }
+}
+</script>
+```
+:::
+
 ### Global method
 
 If Element is fully imported, it will add the following global methods for Vue.prototype: `$msgbox`, `$alert`, `$confirm` and `$prompt`. So in a Vue instance you can call `MessageBox` like what we did in this page. The parameters are:
@@ -301,6 +439,8 @@ The corresponding methods are: `MessageBox`, `MessageBox.alert`, `MessageBox.con
 | message | content of the MessageBox | string | — | — |
 | dangerouslyUseHTMLString | whether `message` is treated as HTML string | boolean | — | false |
 | type | message type, used for icon display | string | success / info / warning / error | — |
+| stack | Stack modals, when more than one is open. By default, the previous modal will be hidden. | Boolean | - | false |
+| size | Modal size | String | mini / small / medium / large | — |
 | iconClass | custom icon's class, overrides `type` | string | — | — |
 | customClass | custom class name for MessageBox | string | — | — |
 | callback | MessageBox closing callback if you don't prefer Promise | function(action), where action can be 'confirm', 'cancel' or 'close', and `instance` is the MessageBox instance. You can access to that instance's attributes and methods | — | — |

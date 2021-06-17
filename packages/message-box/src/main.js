@@ -3,6 +3,7 @@ const defaults = {
   message: '',
   type: '',
   iconClass: '',
+  stack: false,
   showInput: false,
   showClose: true,
   modalFade: true,
@@ -34,11 +35,11 @@ const defaults = {
 };
 
 import Vue from 'vue';
-import msgboxVue from './main.vue';
+import messageboxVue from './main.vue';
 import merge from 'element-ui/src/utils/merge';
 import { isVNode } from 'element-ui/src/utils/vdom';
 
-const MessageBoxConstructor = Vue.extend(msgboxVue);
+const MessageBoxConstructor = Vue.extend(messageboxVue);
 
 let currentMsg, instance;
 let msgQueue = [];
@@ -75,8 +76,8 @@ const initInstance = () => {
   instance.callback = defaultCallback;
 };
 
-const showNextMsg = () => {
-  if (!instance) {
+const showNextMsg = (props) => {
+  if (!instance || props.stack) {
     initInstance();
   }
   instance.action = '';
@@ -98,7 +99,7 @@ const showNextMsg = () => {
       let oldCb = instance.callback;
       instance.callback = (action, instance) => {
         oldCb(action, instance);
-        showNextMsg();
+        showNextMsg(options);
       };
       if (isVNode(instance.message)) {
         instance.$slots.default = [instance.message];
@@ -135,22 +136,24 @@ const MessageBox = function(options, callback) {
 
   if (typeof Promise !== 'undefined') {
     return new Promise((resolve, reject) => { // eslint-disable-line
+      const props = merge({}, defaults, MessageBox.defaults, options);
       msgQueue.push({
-        options: merge({}, defaults, MessageBox.defaults, options),
+        options: props,
         callback: callback,
         resolve: resolve,
         reject: reject
       });
 
-      showNextMsg();
+      showNextMsg(props);
     });
   } else {
+    const props = merge({}, defaults, MessageBox.defaults, options);
     msgQueue.push({
-      options: merge({}, defaults, MessageBox.defaults, options),
+      options: props,
       callback: callback
     });
 
-    showNextMsg();
+    showNextMsg(props);
   }
 };
 

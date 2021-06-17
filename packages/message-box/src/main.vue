@@ -1,5 +1,5 @@
 <template>
-  <transition name="msgbox-fade">
+  <transition name="messagebox-fade">
     <div
       class="el-message-box__wrapper"
       tabindex="-1"
@@ -8,7 +8,7 @@
       role="dialog"
       aria-modal="true"
       :aria-label="title || 'dialog'">
-      <div class="el-message-box" :class="[customClass, center && 'el-message-box--center']">
+      <div class="el-message-box" :class="messageboxClassName">
         <div class="el-message-box__header" v-if="title !== null">
           <div class="el-message-box__title">
             <div
@@ -50,13 +50,13 @@
             <div class="el-message-box__errormsg" :style="{ visibility: !!editorErrorMessage ? 'visible' : 'hidden' }">{{ editorErrorMessage }}</div>
           </div>
         </div>
-        <div class="el-message-box__btns">
+        <div class="el-message-box__btns" v-if="showCancelButton || showConfirmButton">
           <el-button
             :loading="cancelButtonLoading"
             :class="[ cancelButtonClasses ]"
             v-if="showCancelButton"
             :round="roundButton"
-            size="small"
+            size="medium"
             @click.native="handleAction('cancel')"
             @keydown.enter="handleAction('cancel')">
             {{ cancelButtonText || t('el.messagebox.cancel') }}
@@ -67,7 +67,7 @@
             :class="[ confirmButtonClasses ]"
             v-show="showConfirmButton"
             :round="roundButton"
-            size="small"
+            size="medium"
             @click.native="handleAction('confirm')"
             @keydown.enter="handleAction('confirm')">
             {{ confirmButtonText || t('el.messagebox.confirm') }}
@@ -144,6 +144,16 @@
       },
       cancelButtonClasses() {
         return `${ this.cancelButtonClass }`;
+      },
+      messageboxClassName() {
+        const className = [this.customClass];
+        if (this.center) {
+          className.push('el-message-box--center');
+        }
+        if (['mini', 'small', 'medium', 'large'].includes(this.size)) {
+          className.push('el-message-box--' + this.size);
+        }
+        return className;
       }
     },
 
@@ -301,6 +311,7 @@
         title: undefined,
         message: '',
         type: '',
+        size: null,
         iconClass: '',
         customClass: '',
         showInput: false,

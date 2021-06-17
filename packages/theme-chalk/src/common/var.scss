@@ -105,27 +105,18 @@ $--fill-base: $--color-white !default;
 -------------------------- */
 $--font-path: 'fonts' !default;
 $--font-display: 'auto' !default;
-/// fontSize|1|Font Size|0
-$--font-size-extra-large: 20px !default;
-/// fontSize|1|Font Size|0
-$--font-size-large: 18px !default;
-/// fontSize|1|Font Size|0
-$--font-size-medium: 16px !default;
-/// fontSize|1|Font Size|0
-$--font-size-base: 14px !default;
-/// fontSize|1|Font Size|0
+$--font-size-extra-large: 32px !default;
+$--font-size-large: 24px !default;
+$--font-size-medium: 18px !default;
+$--font-size-base: 15px !default;
 $--font-size-small: 13px !default;
-/// fontSize|1|Font Size|0
 $--font-size-extra-small: 12px !default;
-/// fontWeight|1|Font Weight|1
 $--font-weight-primary: 500 !default;
-/// fontWeight|1|Font Weight|1
 $--font-weight-secondary: 100 !default;
-/// fontLineHeight|1|Line Height|2
 $--font-line-height-primary: 24px !default;
-/// fontLineHeight|1|Line Height|2
 $--font-line-height-secondary: 16px !default;
 $--font-color-disabled-base: #bbb !default;
+
 /* Size
 -------------------------- */
 $--size-base: 14px !default;
@@ -340,26 +331,24 @@ $--alert-icon-large-size: 28px !default;
 
 /* MessageBox
 -------------------------- */
-/// color||Color|0
 $--messagebox-title-color: $--color-text-primary !default;
-$--msgbox-width: 420px !default;
-$--msgbox-border-radius: 4px !default;
-/// fontSize||Font|1
+$--messagebox-width: 460px !default;
+$--messagebox-padding: 0 !default;
+$--messagebox-border: none;
+$--messagebox-border-radius: 4px !default;
 $--messagebox-font-size: $--font-size-large !default;
-/// fontSize||Font|1
+$--messagebox-font-weigh: $--font-weight-primary;
+$--messagebox-padding-primary: 30px !default;
+$--messagebox-padding-primary-vertical: 24px !default;
+$--messagebox-header-padding: $--messagebox-padding-primary-vertical $--messagebox-padding-primary 10px;
 $--messagebox-content-font-size: $--font-size-base !default;
-/// color||Color|0
 $--messagebox-content-color: $--color-text-regular !default;
-/// fontSize||Font|1
+$--messagebox-content-padding: 10px $--messagebox-padding-primary $--messagebox-padding-primary-vertical;
 $--messagebox-error-font-size: 12px !default;
-$--msgbox-padding-primary: 15px !default;
-/// color||Color|0
+$--messagebox-buttons-padding: 0 $--messagebox-padding-primary $--messagebox-padding-primary-vertical;
 $--messagebox-success-color: $--color-success !default;
-/// color||Color|0
 $--messagebox-info-color: $--color-info !default;
-/// color||Color|0
 $--messagebox-warning-color: $--color-warning !default;
-/// color||Color|0
 $--messagebox-danger-color: $--color-danger !default;
 
 /* Message
@@ -368,20 +357,13 @@ $--message-shadow: $--box-shadow-base !default;
 $--message-min-width: 380px !default;
 $--message-background-color: #edf2fc !default;
 $--message-padding: 15px 15px 15px 20px !default;
-/// color||Color|0
 $--message-close-icon-color: $--color-text-placeholder !default;
-/// height||Other|4
-$--message-close-size: 16px !default;
-/// color||Color|0
+$--message-close-size: 20px !default;
 $--message-close-hover-color: $--color-text-secondary !default;
 
-/// color||Color|0
 $--message-success-font-color: $--color-success !default;
-/// color||Color|0
 $--message-info-font-color: $--color-info !default;
-/// color||Color|0
 $--message-warning-font-color: $--color-warning !default;
-/// color||Color|0
 $--message-danger-font-color: $--color-danger !default;
 
 /* Notification
@@ -972,6 +954,7 @@ $--svg-monochrome-grey: #DCDDE0 !default;
 
 /* Break-point
 --------------------------*/
+$--xs: 380px !default;
 $--sm: 768px !default;
 $--md: 992px !default;
 $--lg: 1200px !default;
