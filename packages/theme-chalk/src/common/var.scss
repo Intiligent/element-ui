@@ -455,17 +455,13 @@ $--input-disabled-border: $--disabled-border-base !default;
 $--input-disabled-color: $--disabled-color-base !default;
 $--input-disabled-placeholder-color: $--color-text-placeholder !default;
 
-/// fontSize||Font|1
+$--input-large-font-size: 18px !default;
+$--input-large-height: 44px !default;
 $--input-medium-font-size: 14px !default;
-/// height||Other|4
 $--input-medium-height: 36px !default;
-/// fontSize||Font|1
 $--input-small-font-size: 13px !default;
-/// height||Other|4
 $--input-small-height: 32px !default;
-/// fontSize||Font|1
 $--input-mini-font-size: 12px !default;
-/// height||Other|4
 $--input-mini-height: 28px !default;
 
 /* Cascader
@@ -965,7 +961,7 @@ $--avatar-medium-size: 36px !default;
 $--avatar-small-size: 28px !default;
 
 
-/* Skeleton 
+/* Skeleton
 --------------------------*/
 $--skeleton-color: #f2f2f2 !default;
 $--skeleton-to-color: #e6e6e6 !default;
