@@ -8,16 +8,17 @@
     name: 'ElMenu',
 
     render (h) {
+      let className = {
+        'el-menu--horizontal': this.mode === 'horizontal',
+        'el-menu--collapse': this.collapse,
+        'el-menu': true,
+      };
       const component = (
         <ul
           role="menubar"
           key={ +this.collapse }
           style={{ backgroundColor: this.backgroundColor || '' }}
-          class={{
-            'el-menu--horizontal': this.mode === 'horizontal',
-            'el-menu--collapse': this.collapse,
-            "el-menu": true
-          }}
+          class={className}
         >
           { this.$slots.default }
         </ul>
@@ -272,7 +273,7 @@
           this.routeToItem(item, (error) => {
             this.activeIndex = oldActiveIndex;
             if (error) {
-              // vue-router 3.1.0+ push/replace cause NavigationDuplicated error 
+              // vue-router 3.1.0+ push/replace cause NavigationDuplicated error
               // https://github.com/ElemeFE/element/issues/17044
               if (error.name === 'NavigationDuplicated') return
               console.error(error)

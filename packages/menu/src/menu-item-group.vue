@@ -1,6 +1,6 @@
 <template>
   <li class="el-menu-item-group">
-    <div class="el-menu-item-group__title" :style="{paddingLeft: levelPadding + 'px'}">
+    <div class="el-menu-item-group__title" :class="'deep-' + levelDeep">
       <template v-if="!$slots.title">{{title}}</template>
       <slot v-else name="title"></slot>
     </div>
@@ -27,19 +27,20 @@
       };
     },
     computed: {
-      levelPadding() {
-        let padding = 20;
+      levelDeep() {
+        let deep = 0;
         let parent = this.$parent;
-        if (this.rootMenu.collapse) return 20;
+        if (this.rootMenu.collapse) {
+          return 1;
+        }
         while (parent && parent.$options.componentName !== 'ElMenu') {
           if (parent.$options.componentName === 'ElSubmenu') {
-            padding += 20;
+            deep += 1;
           }
           parent = parent.$parent;
         }
-        return padding;
+        return deep;
       }
     }
   };
 </script>
-
