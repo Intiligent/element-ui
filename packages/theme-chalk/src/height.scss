@@ -1,0 +1,30 @@
+@import "common/var";
+
+[class*='el-height'] { box-sizing: border-box; }
+
+/*
+ * Only works if parent element has a height set
+ */
+
+.el-height-1-1 { height: 100%; }
+.el-height-1-2 { height: 50%; }
+.el-height-inherit { height: inherit; }
+
+/*
+ * Useful to create image teasers
+ */
+
+.el-height-viewport { min-height: 100vh; }
+
+/*
+ * Pixel
+ * Useful for `overflow: auto`
+ */
+
+.el-height-small { height: $--height-sm; }
+.el-height-medium { height: $--height-md; }
+.el-height-large { height: $--height-lg; }
+
+.el-height-max-small { max-height: $--height-sm; }
+.el-height-max-medium { max-height: $--height-md; }
+.el-height-max-large { max-height: $--height-lg; }
