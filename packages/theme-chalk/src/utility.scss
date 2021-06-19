@@ -1,0 +1,338 @@
+@import "common/var";
+
+/*
+ * 1. Set `font-size` to support `rem` units
+ *    Not using `font` property because a leading hyphen (e.g. -apple-system) causes the font to break in IE11 and Edge
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ * 3. Style
+ */
+
+html {
+    /* 1 */
+    font-family: $--font-family;
+    font-size: $--font-size-base;
+    font-weight: $--body-font-weight;
+    /* 2 */
+    -webkit-text-size-adjust: 100%;
+    /* 3 */
+    color: $--color-black;
+    height: 100%;
+}
+
+/* Text-level semantics
+ ========================================================================== */
+
+/*
+ * 1. Add the correct text decoration in Edge.
+ * 2. The shorthand declaration `underline dotted` is not supported in Safari.
+ */
+
+abbr[title] {
+    /* 1 */
+    text-decoration: underline dotted;
+    /* 2 */
+    -webkit-text-decoration-style: dotted;
+}
+
+/*
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+// b, strong { font-weight: $--font-weight-primary; }
+
+/*
+ * Mark
+ */
+
+mark {
+    background: $--mark-background;
+    color: $--mark-color;
+}
+
+/*
+ * Quote
+ */
+
+q { font-style: $--quote-font-style; }
+
+/*
+ * Add the correct font size in all browsers.
+ */
+
+small { font-size: $--text-small-font-size; }
+
+/* Embedded content
+ ========================================================================== */
+
+/*
+ * Remove the gap between embedded content and the bottom of their containers.
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video { vertical-align: middle; }
+
+/*
+ * 1. Add responsiveness.
+ * 2. Auto-scale the height. Only needed if `height` attribute is present.
+ * 3. Corrects responsive `max-width` behavior if padding and border are used.
+ * 4. Exclude SVGs for IE11 because they don't preserve their aspect ratio.
+ */
+
+canvas,
+img,
+video {
+    /* 1 */
+    max-width: 100%;
+    /* 2 */
+    height: auto;
+    /* 3 */
+    box-sizing: border-box;
+}
+
+/* 4 */
+@supports (display: block) {
+
+   svg {
+        max-width: 100%;
+        height: auto;
+        box-sizing: border-box;
+    }
+
+}
+
+/*
+ * Hide the overflow in IE.
+ */
+
+svg:not(:root) { overflow: hidden; }
+
+/*
+ * 1. Fix lazy loading images if parent element is set to `display: inline` and has `overflow: hidden`.
+ * 2. Hide `alt` text for lazy loading images.
+ * Note: Selector for background while loading img[data-src*='.jpg'][src*='data:image'] { background: grey; }
+ */
+
+img:not([src]) {
+    /* 1 */
+    min-width: 1px;
+    /* 2 */
+    visibility: hidden;
+}
+
+/*
+ * Iframe
+ * Remove border in all browsers
+ */
+
+iframe { border: 0; }
+
+/* Block elements
+ ========================================================================== */
+
+/*
+ * Margins
+ */
+
+p,
+ul,
+ol,
+dl,
+pre,
+address,
+fieldset,
+figure { margin-bottom: $--margin-default; }
+
+/* Add margin if adjacent element */
+* + p,
+* + ul,
+* + ol,
+* + dl,
+* + pre,
+* + address,
+* + fieldset,
+* + figure { margin-top: $--margin-default; }
+
+/* Headings
+ ========================================================================== */
+h1, .el-h1,
+h2, .el-h2,
+h3, .el-h3,
+h4, .el-h4,
+h5, .el-h5,
+h6, .el-h6 {
+    color: $--heading-color;
+    font-weight: inherit;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+/* Add margin if adjacent element */
+* + h1, * + .el-h1,
+* + h2, * + .el-h2,
+* + h3, * + .el-h3,
+* + h4, * + .el-h4,
+* + h5, * + .el-h5,
+* + h6, * + .el-h6 { margin-top: $--margin-default; }
+
+/*
+ * Sizes
+ */
+
+h1, .el-h1 {
+    font-size: $--h1-font-size;
+    line-height: $--h1-line-height;
+}
+
+h2, .el-h2 {
+    font-size: $--h2-font-size;
+    line-height: $--h2-line-height;
+}
+
+h3, .el-h3 {
+    font-size: $--h3-font-size;
+    line-height: $--h3-line-height;
+}
+
+h4, .el-h4 {
+    font-size: $--h4-font-size;
+    line-height: $--h4-line-height;
+}
+
+h5, .el-h5 {
+    font-size: $--h5-font-size;
+    line-height: $--h5-line-height;
+}
+
+h6, .el-h6 {
+    font-size: $--h6-font-size;
+    line-height: $--h6-line-height;
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: $--md) {
+
+    h1, .el-h1 { font-size: $--h1-font-size-md; }
+    h2, .el-h2 { font-size: $--h2-font-size-md; }
+
+}
+
+/* Description lists
+ ========================================================================== */
+
+dt { font-weight: bold; }
+dd { margin-left: 0; }
+
+/* Horizontal rules
+ ========================================================================== */
+
+/*
+ * 1. Show the overflow in Chrome, Edge and IE.
+ * 2. Add the correct text-align in Edge and IE.
+ * 3. Style
+ */
+
+hr, .el-hr {
+    /* 1 */
+    overflow: visible;
+    /* 2 */
+    text-align: inherit;
+    /* 3 */
+    margin-top: $--hr-margin-vertical;
+    margin-bottom: $--hr-margin-vertical;
+    border: 0;
+    border-top: $--hr-border;
+}
+
+/* Address
+ ========================================================================== */
+
+address { font-style: normal; }
+
+/* Preformatted text
+ ========================================================================== */
+
+/*
+ * 1. Contain overflow in all browsers.
+ */
+
+pre {
+    font: $--pre-font-size unquote("/") $--pre-line-height $--code-font-family;
+    color: $--pre-color;
+    -moz-tab-size: 4;
+    tab-size: 4;
+    /* 1 */
+    overflow: auto;
+}
+
+pre code { font-family: $--code-font-family; }
+
+/* Selection pseudo-element
+ ========================================================================== */
+
+::selection {
+    background: $--selection-background;
+    color: $--selection-color;
+    text-shadow: none;
+}
+
+/* HTML5 elements
+ ========================================================================== */
+
+/*
+ * 1. Add the correct display in Edge, IE 10+, and Firefox.
+ * 2. Add the correct display in IE.
+ */
+
+details, /* 1 */
+main { /* 2 */
+    display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary { display: list-item; }
+
+/*
+ * Add the correct display in IE.
+ */
+
+template { display: none; }
+
+/* Pass media breakpoints to JS
+ ========================================================================== */
+
+/*
+ * Breakpoints
+ */
+
+.el-breakpoint-xs::before  { content: '#{$--xs}'; }
+.el-breakpoint-sm::before  { content: '#{$--sm}'; }
+.el-breakpoint-md::before  { content: '#{$--md}'; }
+.el-breakpoint-lg::before  { content: '#{$--lg}'; }
+.el-breakpoint-xl::before { content: '#{$--xl}'; }
+
+:root {
+    --el-breakpoint-xs: #{$--xs};
+    --el-breakpoint-sm: #{$--sm};
+    --el-breakpoint-md: #{$--md};
+    --el-breakpoint-lg: #{$--lg};
+    --el-breakpoint-xl: #{$--xl};
+}
+
+/* Utilities
+ ========================================================================== */
+
+.el-float-left { float: left; }
+.el-float-right { float: right; }

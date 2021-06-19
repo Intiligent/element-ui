@@ -45,9 +45,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:ElemeFE/element.git"
+    "url": "git@github.com:Intiligent/element-ui.git"
   },
-  "homepage": "http://element.eleme.io",
+  "homepage": "https://intiligent.github.io/element-ui/#/en-US",
   "keywords": [
     "eleme",
     "vue",
@@ -55,7 +55,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ElemeFE/element/issues"
+    "url": "https://github.com/Intiligent/element-ui/issues"
   },
   "unpkg": "lib/index.js",
   "style": "lib/theme-chalk/index.css",

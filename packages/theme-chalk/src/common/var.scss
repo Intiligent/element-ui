@@ -19,6 +19,7 @@ $--color-primary: #2E8EFF !default;
 $--color-secondary: #333333 !default;
 $--color-white: #FFFFFF !default;
 $--color-black: #000000 !default;
+$--color-emphasis: #656A7B !default;
 $--color-muted: #999999 !default;
 $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
 $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
@@ -44,7 +45,7 @@ $--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
 $--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
 $--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
 $--color-text-primary: #303133 !default;
-$--color-text-regular: #606266 !default;
+$--color-text-regular: #464646 !default;
 $--color-text-secondary: #909399 !default;
 $--color-text-placeholder: #C0C4CC !default;
 
@@ -83,6 +84,45 @@ $--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
 -------------------------- */
 $--fill-base: $--color-white !default;
 
+/* Spacings
+--------------------------*/
+
+// Used in margin, section, list
+$--margin-default: 20px !default;
+$--margin-xs: 5px !default;
+$--margin-sm: 10px !default;
+$--margin-md: 40px !default;
+$--margin-lg: 60px !default;
+$--margin-xl: 120px !default;
+
+// Horisontal space. Used in grid, column, container, align, card, padding
+$--gutter-default: 30px !default;
+$--gutter-xs: 10px !default;
+$--gutter-sm: 15px !default;
+$--gutter-md: 40px !default;
+$--gutter-lg: 60px !default;
+
+// grid gutter
+$--grid-gutter-horizontal: $--gutter-default !default;
+$--grid-gutter-vertical: $--grid-gutter-horizontal !default;
+$--grid-gutter-horizontal-l: $--gutter-md !default;
+$--grid-gutter-vertical-l: $--grid-gutter-horizontal-l !default;
+
+$--grid-gutter-horizontal-lg: $--gutter-md !default;
+$--grid-gutter-vertical-lg: $--gutter-md !default;
+$--grid-gutter-horizontal-lg-l: $--gutter-lg !default;
+$--grid-gutter-vertical-lg-l: $--grid-gutter-horizontal-lg-l !default;
+
+$--grid-gutter-horizontal-md: $--gutter-default !default;
+$--grid-gutter-vertical-md: $--grid-gutter-horizontal-md !default;
+$--grid-gutter-horizontal-sm: $--gutter-sm !default;
+$--grid-gutter-vertical-sm: $--grid-gutter-horizontal-sm !default;
+$--grid-gutter-horizontal-xs: $--gutter-xs !default;
+$--grid-gutter-vertical-xs: $--grid-gutter-horizontal-xs !default;
+
+$--grid-divider-border-width: $--border-width-base !default;
+$--grid-divider-border: $--border-color-base !default;
+
 /* Typography
 -------------------------- */
 $--font-path: 'fonts' !default;
@@ -98,6 +138,60 @@ $--font-weight-secondary: 100 !default;
 $--font-line-height-primary: 24px !default;
 $--font-line-height-secondary: 16px !default;
 $--font-color-disabled-base: #bbb !default;
+$--font-family: 'Inter var', sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Helvetica !default;
+
+$--text-large-font-size: $--font-size-large !default;
+$--text-large-line-height: 1.8 !default;
+
+$--text-small-font-size: $--font-size-small !default;
+$--text-small-line-height: 1.5 !default;
+
+$--text-meta-font-size: $--font-size-small !default;
+$--text-meta-line-height: 1.4 !default;
+$--text-meta-color: $--color-muted !default;
+
+$--text-muted-color: $--color-muted !default;
+$--text-emphasis-color: $--color-emphasis !default;
+$--text-primary-color: $--color-primary !default;
+$--text-secondary-color:  $--color-secondary !default;
+$--text-success-color: $--color-success !default;
+$--text-warning-color: $--color-warning !default;
+$--text-danger-color: $--color-danger !default;
+
+$--heading-color: $--color-text-regular !default;
+$--h1-font-size-md: $--font-size-extra-large !default;
+$--h1-font-size: $--h1-font-size-md * 0.85 !default;
+$--h1-line-height: 1.2 !default;
+$--h2-font-size-md: $--font-size-large !default;
+$--h2-font-size: $--h2-font-size-md * 0.85 !default;
+$--h2-line-height: 1.3 !default;
+$--h3-font-size: $--font-size-medium !default;
+$--h3-line-height: 1.4 !default;
+$--h4-font-size: $--font-size-base !default;
+$--h4-line-height: 1.4 !default;
+$--h5-font-size: $--font-size-small !default;
+$--h5-line-height: 1.4 !default;
+$--h6-font-size: $--font-size-extra-small !default;
+$--h6-line-height: 1.4 !default;
+
+$--body-font-weight: 400 !default;
+$--mark-background: #FFFFDD !default;
+$--mark-color: $--color-text-primary !default;
+$--quote-font-style: italic !default;
+
+$--code-font-family: Consolas, monaco, monospace !default;
+$--code-font-size: $--font-size-small !default;
+$--code-color: $--color-danger !default;
+
+$--hr-margin-vertical: $--margin-default;
+$--hr-border: $--border-base !default;
+
+$--pre-font-size: $--font-size-small !default;
+$--pre-line-height: 1.5 !default;
+$--pre-color: $--color-text-primary !default;
+
+$--selection-background: #39f !default;
+$--selection-color: $--color-white !default;
 
 /* Size
 -------------------------- */
@@ -122,21 +216,15 @@ $--icon-color-base: $--color-info !default;
 
 /* Checkbox
 -------------------------- */
-/// fontSize||Font|1
 $--checkbox-font-size: 14px !default;
-/// fontWeight||Font|1
 $--checkbox-font-weight: $--font-weight-primary !default;
-/// color||Color|0
 $--checkbox-font-color: $--color-text-regular !default;
 $--checkbox-input-height: 14px !default;
 $--checkbox-input-width: 14px !default;
-/// borderRadius||Border|2
 $--checkbox-border-radius: $--border-radius-small !default;
-/// color||Color|0
 $--checkbox-background-color: $--color-white !default;
 $--checkbox-input-border: $--border-base !default;
 
-/// color||Color|0
 $--checkbox-disabled-border-color: $--border-color-base !default;
 $--checkbox-disabled-input-fill: #edf2fc !default;
 $--checkbox-disabled-icon-color: $--color-text-placeholder !default;
@@ -145,10 +233,8 @@ $--checkbox-disabled-checked-input-fill: $--border-color-extra-light !default;
 $--checkbox-disabled-checked-input-border-color: $--border-color-base !default;
 $--checkbox-disabled-checked-icon-color: $--color-text-placeholder !default;
 
-/// color||Color|0
 $--checkbox-checked-font-color: $--color-primary !default;
 $--checkbox-checked-input-border-color: $--color-primary !default;
-/// color||Color|0
 $--checkbox-checked-background-color: $--color-primary !default;
 $--checkbox-checked-icon-color: $--fill-base !default;
 
@@ -160,42 +246,29 @@ $--checkbox-bordered-small-padding: 5px 15px 5px 10px !default;
 $--checkbox-bordered-mini-padding: 3px 15px 3px 10px !default;
 $--checkbox-bordered-medium-input-height: 14px !default;
 $--checkbox-bordered-medium-input-width: 14px !default;
-/// height||Other|4
 $--checkbox-bordered-medium-height: 36px !default;
 $--checkbox-bordered-small-input-height: 12px !default;
 $--checkbox-bordered-small-input-width: 12px !default;
-/// height||Other|4
 $--checkbox-bordered-small-height: 32px !default;
 $--checkbox-bordered-mini-input-height: 12px !default;
 $--checkbox-bordered-mini-input-width: 12px !default;
-/// height||Other|4
 $--checkbox-bordered-mini-height: 28px !default;
 
-/// color||Color|0
 $--checkbox-button-checked-background-color: $--color-primary !default;
-/// color||Color|0
 $--checkbox-button-checked-font-color: $--color-white !default;
-/// color||Color|0
 $--checkbox-button-checked-border-color: $--color-primary !default;
 
 /* Radio
 -------------------------- */
-/// fontSize||Font|1
 $--radio-font-size: $--font-size-base !default;
-/// fontWeight||Font|1
 $--radio-font-weight: $--font-weight-primary !default;
-/// color||Color|0
 $--radio-font-color: $--color-text-regular !default;
 $--radio-input-height: 14px !default;
 $--radio-input-width: 14px !default;
-/// borderRadius||Border|2
 $--radio-input-border-radius: $--border-radius-circle !default;
-/// color||Color|0
 $--radio-input-background-color: $--color-white !default;
 $--radio-input-border: $--border-base !default;
-/// color||Color|0
 $--radio-input-border-color: $--border-color-base !default;
-/// color||Color|0
 $--radio-icon-color: $--color-white !default;
 
 $--radio-disabled-input-border-color: $--disabled-border-base !default;
@@ -206,13 +279,9 @@ $--radio-disabled-checked-input-border-color: $--disabled-border-base !default;
 $--radio-disabled-checked-input-fill: $--disabled-fill-base !default;
 $--radio-disabled-checked-icon-color: $--color-text-placeholder !default;
 
-/// color||Color|0
 $--radio-checked-font-color: $--color-primary !default;
-/// color||Color|0
 $--radio-checked-input-border-color: $--color-primary !default;
-/// color||Color|0
 $--radio-checked-input-background-color: $--color-white !default;
-/// color||Color|0
 $--radio-checked-icon-color: $--color-primary !default;
 
 $--radio-input-border-color-hover: $--color-primary !default;
@@ -232,13 +301,9 @@ $--radio-bordered-mini-input-height: 12px !default;
 $--radio-bordered-mini-input-width: 12px !default;
 $--radio-bordered-mini-height: 28px !default;
 
-/// fontSize||Font|1
 $--radio-button-font-size: $--font-size-base !default;
-/// color||Color|0
 $--radio-button-checked-background-color: $--color-primary !default;
-/// color||Color|0
 $--radio-button-checked-font-color: $--color-white !default;
-/// color||Color|0
 $--radio-button-checked-border-color: $--color-primary !default;
 $--radio-button-disabled-checked-fill: $--border-color-extra-light !default;
 
@@ -246,24 +311,19 @@ $--radio-button-disabled-checked-fill: $--border-color-extra-light !default;
 -------------------------- */
 $--select-border-color-hover: $--border-color-hover !default;
 $--select-disabled-border: $--disabled-border-base !default;
-/// fontSize||Font|1
 $--select-font-size: $--font-size-base !default;
 $--select-close-hover-color: $--color-text-secondary !default;
 
 $--select-input-color: $--color-text-placeholder !default;
 $--select-multiple-input-color: #666 !default;
-/// color||Color|0
 $--select-input-focus-border-color: $--color-primary !default;
-/// fontSize||Font|1
 $--select-input-font-size: 14px !default;
 
 $--select-option-color: $--color-text-regular !default;
 $--select-option-disabled-color: $--color-text-placeholder !default;
 $--select-option-disabled-background: $--color-white !default;
-/// height||Other|4
 $--select-option-height: 34px !default;
 $--select-option-hover-background: $--background-color-base !default;
-/// color||Color|0
 $--select-option-selected-font-color: $--color-primary !default;
 $--select-option-selected-hover: $--background-color-base !default;
 
@@ -274,7 +334,6 @@ $--select-group-font-size: 12px !default;
 $--select-dropdown-background: $--color-white !default;
 $--select-dropdown-shadow: $--box-shadow-light !default;
 $--select-dropdown-empty-color: #999 !default;
-/// height||Other|4
 $--select-dropdown-max-height: 274px !default;
 $--select-dropdown-padding: 6px 0 !default;
 $--select-dropdown-empty-padding: 10px 0 !default;
@@ -283,15 +342,10 @@ $--select-dropdown-border: solid 1px $--border-color-light !default;
 /* Alert
 -------------------------- */
 $--alert-padding: 8px 16px !default;
-/// borderRadius||Border|2
 $--alert-border-radius: $--border-radius-base !default;
-/// fontSize||Font|1
 $--alert-title-font-size: 13px !default;
-/// fontSize||Font|1
 $--alert-description-font-size: 12px !default;
-/// fontSize||Font|1
 $--alert-close-font-size: 12px !default;
-/// fontSize||Font|1
 $--alert-close-customed-font-size: 13px !default;
 
 $--alert-success-color: $--color-success-lighter !default;
@@ -299,9 +353,7 @@ $--alert-info-color: $--color-info-lighter !default;
 $--alert-warning-color: $--color-warning-lighter !default;
 $--alert-danger-color: $--color-danger-lighter !default;
 
-/// height||Other|4
 $--alert-icon-size: 16px !default;
-/// height||Other|4
 $--alert-icon-large-size: 28px !default;
 
 /* MessageBox
@@ -368,24 +420,17 @@ $--notification-danger-icon-color: $--color-danger !default;
 /* Input
 -------------------------- */
 $--input-font-size: $--font-size-base !default;
-/// color||Color|0
 $--input-font-color: $--color-text-regular !default;
-/// height||Other|4
 $--input-width: 140px !default;
-/// height||Other|4
 $--input-height: 40px !default;
 $--input-border: $--border-base !default;
 $--input-border-color: $--border-color-base !default;
-/// borderRadius||Border|2
 $--input-border-radius: $--border-radius-base !default;
 $--input-border-color-hover: $--border-color-hover !default;
-/// color||Color|0
 $--input-background-color: $--color-white !default;
 $--input-fill-disabled: $--disabled-fill-base !default;
 $--input-color-disabled: $--font-color-disabled-base !default;
-/// color||Color|0
 $--input-icon-color: $--color-text-placeholder !default;
-/// color||Color|0
 $--input-placeholder-color: $--color-text-placeholder !default;
 $--input-max-width: 314px !default;
 
@@ -411,9 +456,7 @@ $--input-mini-height: 28px !default;
 
 /* Cascader
 -------------------------- */
-/// color||Color|0
 $--cascader-menu-font-color: $--color-text-regular !default;
-/// color||Color|0
 $--cascader-menu-selected-font-color: $--color-primary !default;
 $--cascader-menu-fill: $--fill-base !default;
 $--cascader-menu-font-size: $--font-size-base !default;
@@ -469,49 +512,28 @@ $--button-mini-border-radius: #{$--border-radius-base - 1} !default;
 $--button-mini-padding-vertical: 7px !default;
 $--button-mini-padding-horizontal: 15px !default;
 
-/// color||Color|0
 $--button-default-font-color: $--color-text-regular !default;
-/// color||Color|0
 $--button-default-background-color: $--color-white !default;
-/// color||Color|0
 $--button-default-border-color: $--border-color-base !default;
 
-/// color||Color|0
 $--button-disabled-font-color: $--color-text-placeholder !default;
-/// color||Color|0
 $--button-disabled-background-color: $--color-white !default;
-/// color||Color|0
 $--button-disabled-border-color: $--border-color-lighter !default;
 
-/// color||Color|0
 $--button-primary-border-color: $--color-primary !default;
-/// color||Color|0
 $--button-primary-font-color: $--color-white !default;
-/// color||Color|0
 $--button-primary-background-color: $--color-primary !default;
-/// color||Color|0
 $--button-success-border-color: $--color-success !default;
-/// color||Color|0
 $--button-success-font-color: $--color-white !default;
-/// color||Color|0
 $--button-success-background-color: $--color-success !default;
-/// color||Color|0
 $--button-warning-border-color: $--color-warning !default;
-/// color||Color|0
 $--button-warning-font-color: $--color-white !default;
-/// color||Color|0
 $--button-warning-background-color: $--color-warning !default;
-/// color||Color|0
 $--button-danger-border-color: $--color-danger !default;
-/// color||Color|0
 $--button-danger-font-color: $--color-white !default;
-/// color||Color|0
 $--button-danger-background-color: $--color-danger !default;
-/// color||Color|0
 $--button-info-border-color: $--color-info !default;
-/// color||Color|0
 $--button-info-font-color: $--color-white !default;
-/// color||Color|0
 $--button-info-background-color: $--color-info !default;
 
 $--button-hover-tint-percent: 20% !default;
@@ -524,11 +546,8 @@ $--cascader-height: 200px !default;
 
 /* Switch
 -------------------------- */
-/// color||Color|0
 $--switch-on-color: $--color-primary !default;
-/// color||Color|0
 $--switch-off-color: $--border-color-base !default;
-/// fontSize||Font|1
 $--switch-font-size: $--font-size-base !default;
 $--switch-core-border-radius: 10px !default;
 // height||Other|4 TODO: width 代码写死的40px 所以下面这三个属性都没意义
@@ -549,47 +568,31 @@ $--dialog-padding-primary: 20px !default;
 
 /* Table
 -------------------------- */
-/// color||Color|0
 $--table-border-color: $--border-color-lighter !default;
 $--table-border: 1px solid $--table-border-color !default;
-/// color||Color|0
 $--table-font-color: $--color-text-regular !default;
-/// color||Color|0
 $--table-header-font-color: $--color-text-secondary !default;
-/// color||Color|0
 $--table-row-hover-background-color: $--background-color-base !default;
 $--table-current-row-background-color: $--color-primary-light-9 !default;
-/// color||Color|0
 $--table-header-background-color: $--color-white !default;
 $--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, .12) !default;
 
 /* Pagination
 -------------------------- */
-/// fontSize||Font|1
 $--pagination-font-size: 13px !default;
-/// color||Color|0
 $--pagination-background-color: $--color-white !default;
-/// color||Color|0
 $--pagination-font-color: $--color-text-primary !default;
 $--pagination-border-radius: 3px !default;
-/// color||Color|0
 $--pagination-button-color: $--color-text-primary !default;
-/// height||Other|4
 $--pagination-button-width: 35.5px !default;
-/// height||Other|4
 $--pagination-button-height: 28px !default;
-/// color||Color|0
 $--pagination-button-disabled-color: $--color-text-placeholder !default;
-/// color||Color|0
 $--pagination-button-disabled-background-color: $--color-white !default;
-/// color||Color|0
 $--pagination-hover-color: $--color-primary !default;
 
 /* Popup
 -------------------------- */
-/// color||Color|0
 $--popup-modal-background-color: $--color-black !default;
-/// opacity||Other|1
 $--popup-modal-opacity: 0.5 !default;
 
 /* Popover
@@ -614,28 +617,19 @@ $--tooltip-padding: 10px !default;
 
 /* Tag
 -------------------------- */
-/// color||Color|0
 $--tag-info-color: $--color-info !default;
-/// color||Color|0
 $--tag-primary-color: $--color-primary !default;
-/// color||Color|0
 $--tag-success-color: $--color-success !default;
-/// color||Color|0
 $--tag-warning-color: $--color-warning !default;
-/// color||Color|0
 $--tag-danger-color: $--color-danger !default;
-/// fontSize||Font|1
 $--tag-font-size: 12px !default;
 $--tag-border-radius: 4px !default;
 $--tag-padding: 0 10px !default;
 
 /* Tree
 -------------------------- */
-/// color||Color|0
 $--tree-node-hover-background-color: $--background-color-base !default;
-/// color||Color|0
 $--tree-font-color: $--color-text-regular !default;
-/// color||Color|0
 $--tree-expand-icon-color: $--color-text-placeholder !default;
 
 /* Dropdown
@@ -660,18 +654,14 @@ $--card-padding: 20px !default;
 
 /* Slider
 --------------------------*/
-/// color||Color|0
 $--slider-main-background-color: $--color-primary !default;
-/// color||Color|0
 $--slider-runway-background-color: $--border-color-light !default;
 $--slider-button-hover-color: mix($--color-primary, black, 97%) !default;
 $--slider-stop-background-color: $--color-white !default;
 $--slider-disable-color: $--color-text-placeholder !default;
 $--slider-margin: 16px 0 !default;
 $--slider-border-radius: 3px !default;
-/// height|1|Other|4
 $--slider-height: 6px !default;
-/// height||Other|4
 $--slider-button-size: 16px !default;
 $--slider-button-wrapper-size: 36px !default;
 $--slider-button-wrapper-offset: -15px !default;
@@ -684,11 +674,8 @@ $--steps-padding: 20px !default;
 
 /* Menu
 --------------------------*/
-/// fontSize||Font|1
 $--menu-item-font-size: $--font-size-base !default;
-/// color||Color|0
 $--menu-item-font-color: $--color-text-primary !default;
-/// color||Color|0
 $--menu-background-color: $--color-white !default;
 $--menu-item-hover-fill: $--color-primary-light-9 !default;
 
@@ -703,28 +690,20 @@ $--rate-icon-color: $--color-text-placeholder !default;
 /* DatePicker
 --------------------------*/
 $--datepicker-font-color: $--color-text-regular !default;
-/// color|1|Color|0
 $--datepicker-off-font-color: $--color-text-placeholder !default;
-/// color||Color|0
 $--datepicker-header-font-color: $--color-text-regular !default;
 $--datepicker-icon-color: $--color-text-primary !default;
 $--datepicker-border-color: $--disabled-border-base !default;
 $--datepicker-inner-border-color: #e4e4e4 !default;
-/// color||Color|0
 $--datepicker-inrange-background-color: $--border-color-extra-light !default;
-/// color||Color|0
 $--datepicker-inrange-hover-background-color: $--border-color-extra-light !default;
-/// color||Color|0
 $--datepicker-active-color: $--color-primary !default;
-/// color||Color|0
 $--datepicker-hover-font-color: $--color-primary !default;
 $--datepicker-cell-hover-color: #fff !default;
 
 /* Loading
 --------------------------*/
-/// height||Other|4
 $--loading-spinner-size: 42px !default;
-/// height||Other|4
 $--loading-fullscreen-spinner-size: 50px !default;
 
 /* Scrollbar
@@ -734,14 +713,11 @@ $--scrollbar-hover-background-color: rgba($--color-text-secondary, .5) !default;
 
 /* Carousel
 --------------------------*/
-/// fontSize||Font|1
 $--carousel-arrow-font-size: 12px !default;
 $--carousel-arrow-size: 36px !default;
 $--carousel-arrow-background: rgba(31, 45, 61, 0.11) !default;
 $--carousel-arrow-hover-background: rgba(31, 45, 61, 0.23) !default;
-/// width||Other|4
 $--carousel-indicator-width: 30px !default;
-/// height||Other|4
 $--carousel-indicator-height: 2px !default;
 $--carousel-indicator-padding-horizontal: 4px !default;
 $--carousel-indicator-padding-vertical: 12px !default;
@@ -749,40 +725,25 @@ $--carousel-indicator-out-color: $--border-color-hover !default;
 
 /* Collapse
 --------------------------*/
-/// color||Color|0
 $--collapse-border-color: $--border-color-lighter !default;
-/// height||Other|4
 $--collapse-header-height: 48px !default;
-/// color||Color|0
 $--collapse-header-background-color: $--color-white !default;
-/// color||Color|0
 $--collapse-header-font-color: $--color-text-primary !default;
-/// fontSize||Font|1
 $--collapse-header-font-size: 13px !default;
-/// color||Color|0
 $--collapse-content-background-color: $--color-white !default;
-/// fontSize||Font|1
 $--collapse-content-font-size: 13px !default;
-/// color||Color|0
 $--collapse-content-font-color: $--color-text-primary !default;
 
 /* Transfer
 --------------------------*/
 $--transfer-border-color: $--border-color-lighter !default;
 $--transfer-border-radius: $--border-radius-base !default;
-/// height||Other|4
 $--transfer-panel-width: 200px !default;
-/// height||Other|4
 $--transfer-panel-header-height: 40px !default;
-/// color||Color|0
 $--transfer-panel-header-background-color: $--background-color-base !default;
-/// height||Other|4
 $--transfer-panel-footer-height: 40px !default;
-/// height||Other|4
 $--transfer-panel-body-height: 246px !default;
-/// height||Other|4
 $--transfer-item-height: 30px !default;
-/// height||Other|4
 $--transfer-filter-height: 32px !default;
 
 /* Header
@@ -805,65 +766,41 @@ $--timeline-node-color: $--border-color-light !default;
 
 /* Backtop
 --------------------------*/
-/// color||Color|0
 $--backtop-background-color: $--color-white !default;
-/// color||Color|0
 $--backtop-font-color: $--color-primary !default;
-/// color||Color|0
 $--backtop-hover-background-color: $--border-color-extra-light !default;
 
 /* Link
 --------------------------*/
-/// fontSize||Font|1
 $--link-font-size: $--font-size-base !default;
-/// fontWeight||Font|1
 $--link-font-weight: $--font-weight-primary !default;
-/// color||Color|0
 $--link-default-font-color: $--color-text-regular !default;
-/// color||Color|0
 $--link-default-active-color: $--color-primary !default;
-/// color||Color|0
 $--link-disabled-font-color: $--color-text-placeholder !default;
-/// color||Color|0
 $--link-primary-font-color: $--color-primary !default;
-/// color||Color|0
 $--link-success-font-color: $--color-success !default;
-/// color||Color|0
 $--link-warning-font-color: $--color-warning !default;
-/// color||Color|0
 $--link-danger-font-color: $--color-danger !default;
-/// color||Color|0
 $--link-info-font-color: $--color-info !default;
 /* Calendar
 --------------------------*/
-/// border||Other|4
 $--calendar-border: $--table-border !default;
-/// color||Other|4
 $--calendar-selected-background-color: #F2F8FE !default;
 $--calendar-cell-width: 85px !default;
 
 /* Form
 -------------------------- */
-/// fontSize||Font|1
 $--form-label-font-size: $--font-size-base !default;
 
 /* Avatar
 --------------------------*/
-/// color||Color|0
 $--avatar-font-color: #fff !default;
-/// color||Color|0
 $--avatar-background-color: #C0C4CC !default;
-/// fontSize||Font Size|1
 $--avatar-text-font-size: 14px !default;
-/// fontSize||Font Size|1
 $--avatar-icon-font-size: 18px !default;
-/// borderRadius||Border|2
 $--avatar-border-radius: $--border-radius-base !default;
-/// size|1|Avatar Size|3
 $--avatar-large-size: 40px !default;
-/// size|1|Avatar Size|3
 $--avatar-medium-size: 36px !default;
-/// size|1|Avatar Size|3
 $--avatar-small-size: 28px !default;
 
 
@@ -875,45 +812,6 @@ $--skeleton-to-color: #e6e6e6 !default;
 /* Svg
 --------------- */
 $--svg-monochrome-grey: #DCDDE0 !default;
-
-/* Spacings
---------------------------*/
-
-// Used in margin, section, list
-$--margin-default: 20px !default;
-$--margin-xs: 5px !default;
-$--margin-sm: 10px !default;
-$--margin-md: 40px !default;
-$--margin-lg: 60px !default;
-$--margin-xl: 120px !default;
-
-// Horisontal space. Used in grid, column, container, align, card, padding
-$--gutter-default: 30px !default;
-$--gutter-xs: 10px !default;
-$--gutter-sm: 15px !default;
-$--gutter-md: 40px !default;
-$--gutter-lg: 60px !default;
-
-// grid gutter
-$--grid-gutter-horizontal: $--gutter-default !default;
-$--grid-gutter-vertical: $--grid-gutter-horizontal !default;
-$--grid-gutter-horizontal-l: $--gutter-md !default;
-$--grid-gutter-vertical-l: $--grid-gutter-horizontal-l !default;
-
-$--grid-gutter-horizontal-lg: $--gutter-md !default;
-$--grid-gutter-vertical-lg: $--gutter-md !default;
-$--grid-gutter-horizontal-lg-l: $--gutter-lg !default;
-$--grid-gutter-vertical-lg-l: $--grid-gutter-horizontal-lg-l !default;
-
-$--grid-gutter-horizontal-md: $--gutter-default !default;
-$--grid-gutter-vertical-md: $--grid-gutter-horizontal-md !default;
-$--grid-gutter-horizontal-sm: $--gutter-sm !default;
-$--grid-gutter-vertical-sm: $--grid-gutter-horizontal-sm !default;
-$--grid-gutter-horizontal-xs: $--gutter-xs !default;
-$--grid-gutter-vertical-xs: $--grid-gutter-horizontal-xs !default;
-
-$--grid-divider-border-width: $--border-width-base !default;
-$--grid-divider-border: $--border-color-base !default;
 
 /* Width
 --------------------------*/
