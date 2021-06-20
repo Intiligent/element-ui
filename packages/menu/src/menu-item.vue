@@ -2,7 +2,7 @@
   <li class="el-menu-item"
     role="menuitem"
     tabindex="-1"
-    :style="[paddingStyle, itemStyle, { backgroundColor }]"
+    :style="[itemStyle, { backgroundColor }]"
     :class="{
       'is-active': active,
       'is-disabled': disabled

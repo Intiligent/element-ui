@@ -4,17 +4,18 @@
 @import "common/transition";
 
 @mixin menu-item {
-  height: 56px;
-  line-height: 56px;
+  height: $--menu-item-height;
+  line-height: $--menu-item-height;
   font-size: $--menu-item-font-size;
   color: $--menu-item-font-color;
-  padding: 0 20px;
+  margin: $--menu-item-margin;
   list-style: none;
   cursor: pointer;
   position: relative;
   transition: border-color .3s, background-color .3s, color .3s;
   box-sizing: border-box;
   white-space: nowrap;
+  border-radius: $--menu-item-border-radius;
 
   * {
     vertical-align: middle;
@@ -30,6 +31,15 @@
     background-color: $--menu-item-hover-fill;
   }
 
+  & > a {
+    display: block;
+    color: inherit;
+    padding: $--menu-item-padding;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   @include when(disabled) {
     opacity: 0.25;
     cursor: not-allowed;
@@ -38,7 +48,7 @@
 }
 
 @include b(menu) {
-  border-right: solid 1px #e6e6e6;
+  border-right: $--menu-border;
   list-style: none;
   position: relative;
   margin: 0;
@@ -46,7 +56,14 @@
   background-color: $--menu-background-color;
   @include utils-clearfix;
   &.el-menu--horizontal {
-    border-bottom: solid 1px #e6e6e6;
+    border-bottom: $--menu-border;
+  }
+
+  @include m(transparent) {
+    background-color: transparent;
+    @include b(menu) {
+      background-color: transparent;
+    }
   }
 
   @include m(horizontal) {
@@ -204,7 +221,7 @@
     margin-right: 5px;
     width: 24px;
     text-align: center;
-    font-size: 18px;
+    // font-size: 18px;
     vertical-align: middle;
   }
   @include when(active) {
@@ -214,7 +231,7 @@
     }
   }
 }
-  
+
 @include b(submenu) {
   list-style: none;
   margin: 0;
@@ -231,9 +248,9 @@
     border: none;
   }
   & .el-menu-item {
-    height: 50px;
-    line-height: 50px;
-    padding: 0 45px;
+    height: $--menu-item-height;
+    line-height: $--menu-item-height;
+    padding: $--submenu-item-padding;
     min-width: 200px;
   }
   @include e(icon-arrow) {
@@ -267,19 +284,23 @@
     margin-right: 5px;
     width: 24px;
     text-align: center;
-    font-size: 18px;
+    // font-size: 18px;
   }
 }
 
 @include b(menu-item-group) {
   > ul {
     padding: 0;
+    margin: $--menu-group-nested-margin;
   }
   @include e(title) {
-    padding: 7px 0 7px 20px;
-    line-height: normal;
-    font-size: 12px;
-    color: $--color-text-secondary;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: normal;
+      color: $--color-text-secondary;
+      padding: 7px 20px;
+      margin-top: 20px;
   }
 }
 
