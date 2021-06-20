@@ -124,6 +124,12 @@
         stretch
       } = this;
 
+      const headerPanel = this.$slots.panel ? (
+        <span class="el-tabs__panel">
+          {this.$slots.panel}
+        </span>
+      ) : null;
+
       const newButton = editable || addable
         ? (
           <span
@@ -152,6 +158,7 @@
       const header = (
         <div class={['el-tabs__header', `is-${tabPosition}`]}>
           {newButton}
+          {headerPanel}
           <tab-nav { ...navData }></tab-nav>
           {this.$slots.header}
         </div>

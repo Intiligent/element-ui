@@ -240,18 +240,26 @@ summary { display: list-item; }
 
 template { display: none; }
 
-/* Pass media breakpoints to JS
+/* Utilities
  ========================================================================== */
 
-/*
- * Breakpoints
- */
+.el-float-left { float: left; }
+.el-float-right { float: right; }
 
-.el-breakpoint-xs::before  { content: '#{$--xs}'; }
-.el-breakpoint-sm::before  { content: '#{$--sm}'; }
-.el-breakpoint-md::before  { content: '#{$--md}'; }
-.el-breakpoint-lg::before  { content: '#{$--lg}'; }
-.el-breakpoint-xl::before { content: '#{$--xl}'; }
+.el-cursor { cursor: pointer; }
+
+[v-cloak] {
+    display: none;
+}
+
+/* Padding spacing
+ ========================================================================== */
+.el-padding {
+    padding: $--margin-default;
+}
+
+/* Pass data to JS
+ ========================================================================== */
 
 :root {
     --el-breakpoint-xs: #{$--xs};
@@ -260,9 +268,3 @@ template { display: none; }
     --el-breakpoint-lg: #{$--lg};
     --el-breakpoint-xl: #{$--xl};
 }
-
-/* Utilities
- ========================================================================== */
-
-.el-float-left { float: left; }
-.el-float-right { float: right; }

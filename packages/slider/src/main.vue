@@ -34,15 +34,17 @@
       </div>
       <slider-button
         :vertical="vertical"
-        v-model="firstValue"
+        :button-size="buttonSize"
         :tooltip-class="tooltipClass"
+        v-model="firstValue"
         ref="button1">
       </slider-button>
       <slider-button
         :vertical="vertical"
-        v-model="secondValue"
+        :button-size="buttonSize"
         :tooltip-class="tooltipClass"
         ref="button2"
+        v-model="secondValue"
         v-if="range">
       </slider-button>
       <div
@@ -118,6 +120,13 @@
       inputSize: {
         type: String,
         default: 'small'
+      },
+      buttonSize: {
+        type: String,
+        default: '',
+        validator(value) {
+          return ['', 'mini'].includes(value);
+        }
       },
       showStops: {
         type: Boolean,

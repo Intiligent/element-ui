@@ -26,6 +26,7 @@
     left: 0;
     right: 0;
     text-align: center;
+    padding: 10px;
 
     &::after {
       content: "";
@@ -77,10 +78,12 @@
     padding: $--messagebox-content-padding;
     color: $--messagebox-content-color;
     font-size: $--messagebox-content-font-size;
+    height: inherit;
   }
 
   @include e(container) {
     position: relative;
+    height: inherit;
   }
 
   @include e(input) {
@@ -129,6 +132,7 @@
 
   @include e(message) {
     margin: 0;
+    height: inherit;
 
     & p {
       margin: 0;
@@ -195,24 +199,32 @@
     }
   }
 
-  // Size
-  @include m(default) {
-    max-width: $--messagebox-width;
+  // State
+  @include m(collapse) {
+    @include e(content) {
+      padding: 0;
+    }
   }
+
+  @include m(viewport) {
+    height: $--messagebox-height-viewport;
+  }
+
+  // Size
   @include m(mini) {
-    max-width: $--xs;
+    max-width: $--messagebox-size-xs;
   }
   @include m(small) {
-    max-width: $--sm;
+    max-width: $--messagebox-size-sm;
   }
   @include m(medium) {
-    max-width: $--md;
+    max-width: $--messagebox-size-md;
   }
   @include m(large) {
-    max-width: $--lg;
+    max-width: $--messagebox-size-lg;
   }
   @include m(xlarge) {
-    max-width: $--xl;
+    max-width: $--messagebox-size-xl;
   }
 }
 

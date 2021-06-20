@@ -5,7 +5,7 @@
     @mouseleave="handleMouseLeave"
     @mousedown="onButtonDown"
     @touchstart="onButtonDown"
-    :class="{ 'hover': hovering, 'dragging': dragging }"
+    :class="{'hover': hovering, 'dragging': dragging}"
     :style="wrapperStyle"
     ref="button"
     tabindex="0"
@@ -22,7 +22,7 @@
       :popper-class="tooltipClass"
       :disabled="!showTooltip">
       <span slot="content">{{ formatValue }}</span>
-      <div class="el-slider__button" :class="{ 'hover': hovering, 'dragging': dragging }"></div>
+      <div class="el-slider__button" :class="buttonClassName"></div>
     </el-tooltip>
   </div>
 </template>
@@ -45,6 +45,9 @@
       vertical: {
         type: Boolean,
         default: false
+      },
+      buttonSize: {
+        type: String
       },
       tooltipClass: String
     },
@@ -103,6 +106,20 @@
 
       wrapperStyle() {
         return this.vertical ? { bottom: this.currentPosition } : { left: this.currentPosition };
+      },
+
+      buttonClassName() {
+        const className = [];
+        if (this.hovering) {
+          className.push('hover');
+        }
+        if (this.dragging) {
+          className.push('dragging');
+        }
+        if (this.buttonSize) {
+          className.push(this.buttonSize);
+        }
+        return className;
       }
     },
 

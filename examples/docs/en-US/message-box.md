@@ -369,6 +369,7 @@ export default {
             this.$msgbox({
                 title: 'Default modal size',
                 message: 'Different modal size',
+                stack: true,
             });
         },
 
@@ -378,6 +379,7 @@ export default {
                 title: 'Mini modal size',
                 message: 'Different modal size',
                 size: 'mini',
+                stack: true,
             });
         },
 
@@ -387,6 +389,7 @@ export default {
                 title: 'Small modal size',
                 message: 'Different modal size',
                 size: 'small',
+                stack: true,
             });
         },
 
@@ -396,6 +399,7 @@ export default {
                 title: 'Medium modal size',
                 message: 'Different modal size',
                 size: 'medium',
+                stack: true,
             });
         },
 
@@ -405,6 +409,35 @@ export default {
                 title: 'Large modal size',
                 message: 'Different modal size',
                 size: 'large',
+                stack: true,
+            });
+        },
+    }
+}
+</script>
+```
+:::
+
+### Collapse modal
+
+No spacing.
+
+:::demo To remove body spacing pass prop `collapse: true`.
+
+```html
+<template>
+    <el-button type="text" @click="open">Click to open collapse modal</el-button>
+</template>
+
+<script>
+export default {
+    methods: {
+        open() {
+            const h = this.$createElement;
+            this.$msgbox({
+                title: 'Collapse modal',
+                message: 'Message box without padding',
+                collapse: true,
             });
         },
     }
@@ -441,6 +474,7 @@ The corresponding methods are: `MessageBox`, `MessageBox.alert`, `MessageBox.con
 | type | message type, used for icon display | string | success / info / warning / error | — |
 | stack | Stack modals, when more than one is open. By default, the previous modal will be hidden. | Boolean | - | false |
 | size | Modal size | String | mini / small / medium / large | — |
+| collapse | Content block without spacing | Boolean | — | false |
 | iconClass | custom icon's class, overrides `type` | string | — | — |
 | customClass | custom class name for MessageBox | string | — | — |
 | callback | MessageBox closing callback if you don't prefer Promise | function(action), where action can be 'confirm', 'cancel' or 'close', and `instance` is the MessageBox instance. You can access to that instance's attributes and methods | — | — |

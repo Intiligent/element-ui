@@ -141,6 +141,11 @@
     &.dragging {
       cursor: grabbing;
     }
+
+    &.mini {
+      height: $--slider-button-size-xs;
+      width: $--slider-button-size-xs;
+    }
   }
 
   @include e(stop) {

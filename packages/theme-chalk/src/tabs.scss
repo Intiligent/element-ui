@@ -17,6 +17,13 @@
     transition: transform .3s cubic-bezier(.645,.045,.355,1);
     list-style: none;
   }
+  @include e(panel) {
+    float: right;
+    line-height: $--tab-item-height;
+    @if (mixin-exists(hook-tab-header-panel)) {
+        @include hook-tab-header-panel();
+    }
+  }
   @include e(new-tab) {
     float: right;
     border: 1px solid #d3dce6;
@@ -94,9 +101,9 @@
   }
   @include e(item) {
     padding: 0 20px;
-    height: 40px;
+    height: $--tab-item-height;
     box-sizing: border-box;
-    line-height: 40px;
+    line-height: $--tab-item-height;
     display: inline-block;
     list-style: none;
     font-size: 14px;

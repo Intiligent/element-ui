@@ -125,6 +125,21 @@
       roundButton: {
         default: false,
         type: Boolean
+      },
+      size: {
+        type: String,
+        default: '',
+        validator(value) {
+          return ['', 'mini', 'small', 'medium', 'large', 'xlarge'].includes(value);
+        }
+      },
+      collapse: {
+        type: Boolean,
+        default: false
+      },
+      viewport: {
+        type: Boolean,
+        default: false
       }
     },
 
@@ -150,8 +165,14 @@
         if (this.center) {
           className.push('el-message-box--center');
         }
-        if (['mini', 'small', 'medium', 'large'].includes(this.size)) {
+        if (this.size) {
           className.push('el-message-box--' + this.size);
+        }
+        if (this.collapse) {
+          className.push('el-message-box--collapse');
+        }
+        if (this.viewport) {
+          className.push('el-message-box--viewport');
         }
         return className;
       }
@@ -311,7 +332,6 @@
         title: undefined,
         message: '',
         type: '',
-        size: null,
         iconClass: '',
         customClass: '',
         showInput: false,

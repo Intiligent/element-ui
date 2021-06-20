@@ -19,6 +19,10 @@ The current value is displayed when the slider is being dragged.
     <el-slider v-model="value2"></el-slider>
   </div>
   <div class="block">
+    <span class="demonstration">Button size: mini</span>
+    <el-slider v-model="value6" button-size="mini"></el-slider>
+  </div>
+  <div class="block">
     <span class="demonstration">Hide Tooltip</span>
     <el-slider v-model="value3" :show-tooltip="false"></el-slider>
   </div>
@@ -40,7 +44,8 @@ The current value is displayed when the slider is being dragged.
         value2: 50,
         value3: 36,
         value4: 48,
-        value5: 42
+        value5: 42,
+        value6: 32,
       }
     },
     methods: {
@@ -222,6 +227,7 @@ Selecting a range of values is supported.
 | show-input | whether to display an input box, works when `range` is false | boolean | — | false |
 | show-input-controls | whether to display control buttons when `show-input` is true | boolean | — | true |
 | input-size | size of the input box | string | large / medium / small / mini | small |
+| button-size | size of the button | string | — / mini | — |
 | show-stops | whether to display breakpoints | boolean | — | false |
 | show-tooltip | whether to display tooltip value | boolean | — | true |
 | format-tooltip | format to display tooltip value | function(value) | — | — |
@@ -238,4 +244,3 @@ Selecting a range of values is supported.
 |---------- |-------- |---------- |
 | change | triggers when the value changes (if the mouse is being dragged, this event only fires when the mouse is released) | value after changing |
 | input | triggers when the data changes (It'll be emitted in real time during sliding) | value after changing |
-

@@ -87,6 +87,43 @@ $--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
 -------------------------- */
 $--fill-base: $--color-white !default;
 
+/* Break-point
+--------------------------*/
+$--xs: 360px !default; // extra small
+$--sm: 768px !default; // small
+$--md: 960px !default; // medium
+$--lg: 1280px !default; // large
+$--xl: 1600px !default; // extra large
+$--xxl: 1920px !default; // extra extra large
+
+$--xs-max: ($--sm - 1) !default;
+$--sm-max: ($--md - 1) !default;
+$--md-max: ($--lg - 1) !default;
+$--lg-max: ($--xl - 1) !default;
+$--xl-max: ($--xxl - 1) !default;
+
+$--breakpoints: (
+  'xs' : (max-width: $--sm - 1),
+  'sm' : (min-width: $--sm),
+  'md' : (min-width: $--md),
+  'lg' : (min-width: $--lg),
+  'xl' : (min-width: $--xl)
+);
+
+$--breakpoints-spec: (
+  'xs-only' : (max-width: $--sm - 1),
+  'sm-and-up' : (min-width: $--sm),
+  'sm-only': "(min-width: #{$--sm}) and (max-width: #{$--md - 1})",
+  'sm-and-down': (max-width: $--md - 1),
+  'md-and-up' : (min-width: $--md),
+  'md-only': "(min-width: #{$--md}) and (max-width: #{$--lg - 1})",
+  'md-and-down': (max-width: $--lg - 1),
+  'lg-and-up' : (min-width: $--lg),
+  'lg-only': "(min-width: #{$--lg}) and (max-width: #{$--xl - 1})",
+  'lg-and-down': (max-width: $--xl - 1),
+  'xl-only' : (min-width: $--xl),
+);
+
 /* Spacings
 --------------------------*/
 
@@ -370,16 +407,23 @@ $--messagebox-font-size: $--font-size-large !default;
 $--messagebox-font-weigh: $--font-weight-primary !default;
 $--messagebox-padding-primary: 30px !default;
 $--messagebox-padding-primary-vertical: 24px !default;
-$--messagebox-header-padding: $--messagebox-padding-primary-vertical $--messagebox-padding-primary 10px !default;
+$--messagebox-header-padding: $--messagebox-padding-primary-vertical $--messagebox-padding-primary 0 !default;
 $--messagebox-content-font-size: $--font-size-base !default;
 $--messagebox-content-color: $--color-text-regular !default;
-$--messagebox-content-padding: 10px $--messagebox-padding-primary $--messagebox-padding-primary-vertical !default;
+$--messagebox-content-padding: $--messagebox-padding-primary-vertical $--messagebox-padding-primary $--messagebox-padding-primary-vertical !default;
 $--messagebox-error-font-size: 12px !default;
 $--messagebox-buttons-padding: 0 $--messagebox-padding-primary $--messagebox-padding-primary-vertical !default;
 $--messagebox-success-color: $--color-success !default;
 $--messagebox-info-color: $--color-info !default;
 $--messagebox-warning-color: $--color-warning !default;
 $--messagebox-danger-color: $--color-danger !default;
+$--messagebox-height-viewport: 80vh !default;
+// size
+$--messagebox-size-xs: $--xs !default;
+$--messagebox-size-sm: 660px !default;
+$--messagebox-size-md: $--md !default;
+$--messagebox-size-lg: $--lg !default;
+$--messagebox-size-xl: $--xl !default;
 
 /* Message
 -------------------------- */
@@ -492,6 +536,10 @@ $--tab-header-fill-hover: rgba($--color-black, 0.06) !default;
 $--tab-vertical-header-width: 90px !default;
 $--tab-vertical-header-count-color: $--color-white !default;
 $--tab-vertical-header-count-fill: $--color-text-secondary !default;
+$--tab-item-height: 40px !default;
+@mixin hook-tab-header-panel {
+    color: red;
+}
 
 /* Button
 -------------------------- */
@@ -666,6 +714,7 @@ $--slider-margin: 16px 0 !default;
 $--slider-border-radius: 3px !default;
 $--slider-height: 6px !default;
 $--slider-button-size: 16px !default;
+$--slider-button-size-xs: 10px !default;
 $--slider-button-wrapper-size: 36px !default;
 $--slider-button-wrapper-offset: -15px !default;
 
@@ -837,43 +886,6 @@ $--width-2xlarge-width: 750px !default;
 $--height-sm: 150px !default;
 $--height-md: 300px !default;
 $--height-lg: 450px !default;
-
-/* Break-point
---------------------------*/
-$--xs: 360px !default; // extra small
-$--sm: 768px !default; // small
-$--md: 960px !default; // medium
-$--lg: 1280px !default; // large
-$--xl: 1600px !default; // extra large
-$--xxl: 1920px !default; // extra extra large
-
-$--xs-max: ($--sm - 1) !default;
-$--sm-max: ($--md - 1) !default;
-$--md-max: ($--lg - 1) !default;
-$--lg-max: ($--xl - 1) !default;
-$--xl-max: ($--xxl - 1) !default;
-
-$--breakpoints: (
-  'xs' : (max-width: $--sm - 1),
-  'sm' : (min-width: $--sm),
-  'md' : (min-width: $--md),
-  'lg' : (min-width: $--lg),
-  'xl' : (min-width: $--xl)
-);
-
-$--breakpoints-spec: (
-  'xs-only' : (max-width: $--sm - 1),
-  'sm-and-up' : (min-width: $--sm),
-  'sm-only': "(min-width: #{$--sm}) and (max-width: #{$--md - 1})",
-  'sm-and-down': (max-width: $--md - 1),
-  'md-and-up' : (min-width: $--md),
-  'md-only': "(min-width: #{$--md}) and (max-width: #{$--lg - 1})",
-  'md-and-down': (max-width: $--lg - 1),
-  'lg-and-up' : (min-width: $--lg),
-  'lg-only': "(min-width: #{$--lg}) and (max-width: #{$--xl - 1})",
-  'lg-and-down': (max-width: $--xl - 1),
-  'xl-only' : (min-width: $--xl),
-);
 
 /* Container
 --------------------------*/
