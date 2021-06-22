@@ -129,6 +129,64 @@ Radio with button styles.
 ```
 :::
 
+### Vertical button style
+
+Radio with vertical position button styles.
+
+:::demo You just need to change `el-radio` element into `el-radio-button` element. We also provide `vertical` attribute.
+```html
+<template>
+    <div style="display: flex;">
+        <div style="display: inline-block; width: 250px;">
+          <el-radio-group vertical v-model="radio1">
+            <el-radio-button label="New York"></el-radio-button>
+            <el-radio-button label="Washington"></el-radio-button>
+            <el-radio-button label="Los Angeles"></el-radio-button>
+            <el-radio-button label="Chicago"></el-radio-button>
+          </el-radio-group>
+        </div>
+        <div style="display: inline-block; width: 220px; margin-left: 20px;">
+          <el-radio-group vertical v-model="radio2" size="medium">
+            <el-radio-button label="New York" ></el-radio-button>
+            <el-radio-button label="Washington"></el-radio-button>
+            <el-radio-button label="Los Angeles"></el-radio-button>
+            <el-radio-button label="Chicago"></el-radio-button>
+          </el-radio-group>
+        </div>
+        <div style="display: inline-block; width: 150px; margin-left: 20px;">
+          <el-radio-group vertical v-model="radio3" size="small">
+            <el-radio-button label="New York"></el-radio-button>
+            <el-radio-button label="Washington" disabled ></el-radio-button>
+            <el-radio-button label="Los Angeles"></el-radio-button>
+            <el-radio-button label="Chicago"></el-radio-button>
+          </el-radio-group>
+        </div>
+        <div style="display: inline-block; width: 120px; margin-left: 20px;">
+          <el-radio-group vertical v-model="radio4" disabled size="mini">
+            <el-radio-button label="New York"></el-radio-button>
+            <el-radio-button label="Washington"></el-radio-button>
+            <el-radio-button label="Los Angeles"></el-radio-button>
+            <el-radio-button label="Chicago"></el-radio-button>
+          </el-radio-group>
+        </div>
+    </div>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        radio1: 'New York',
+        radio2: 'New York',
+        radio3: 'New York',
+        radio4: 'New York'
+      };
+    }
+  }
+</script>
+```
+:::
+
 ### With borders
 
 :::demo The `border` attribute adds a border to Radios.
@@ -194,6 +252,7 @@ name | native 'name' attribute | string    |      —         |     —
 ---- | ---- | ---- | ---- | ----
 value / v-model | binding value | string / number / boolean | — | —
 size | the size of radio buttons or bordered radios | string | medium / small / mini | —
+vertical  | vertical position of buttons | boolean   | — | false
 disabled  | whether the nesting radios are disabled | boolean   | — | false
 text-color | font color when button is active | string   | — | #ffffff   |
 fill  | border and background color when button is active | string   | — | #409EFF   |

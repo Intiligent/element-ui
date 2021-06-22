@@ -1,13 +1,14 @@
 <template>
   <component
     :is="_elTag"
-    class="el-radio-group"
+    :class="groupClassName"
     role="radiogroup"
     @keydown="handleKeydown"
   >
     <slot></slot>
   </component>
 </template>
+
 <script>
   import Emitter from 'element-ui/src/mixins/emitter';
 
@@ -35,6 +36,10 @@
       size: String,
       fill: String,
       textColor: String,
+      vertical: {
+        type: Boolean,
+        default: false
+      },
       disabled: Boolean
     },
 
@@ -47,6 +52,13 @@
       },
       radioGroupSize() {
         return this.size || this._elFormItemSize || (this.$ELEMENT || {}).size;
+      },
+      groupClassName() {
+        const className = ['el-radio-group'];
+        if (this.vertical) {
+          className.push('el-radio-group--vertical');
+        }
+        return className;
       }
     },
 
@@ -108,4 +120,3 @@
     }
   };
 </script>
-

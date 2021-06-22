@@ -242,7 +242,6 @@ template { display: none; }
 
 /* Utilities
  ========================================================================== */
-
 .el-float-left { float: left; }
 .el-float-right { float: right; }
 
@@ -251,6 +250,22 @@ template { display: none; }
 [v-cloak] {
     display: none;
 }
+
+.el-overflow-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+}
+
+/* Position
+ ========================================================================== */
+.el-position-relative { position: relative !important; }
+.el-position-absolute { position: absolute !important; }
+.el-position-fixed { position: fixed !important; }
+.el-position-z-index { z-index: 1; }
 
 /* Padding spacing
  ========================================================================== */

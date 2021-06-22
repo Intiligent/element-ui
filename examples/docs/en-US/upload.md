@@ -312,6 +312,25 @@ You can drag your file to a certain area to upload it.
   <div class="el-upload__text">Drop file here or <em>click to upload</em></div>
   <div class="el-upload__tip" slot="tip">jpg/png files with a size less than 500kb</div>
 </el-upload>
+
+<script>
+  export default {
+    data() {
+      return {
+        fileList: [{name: 'food.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}, {name: 'food2.jpeg', url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'}]
+      };
+    },
+
+    methods: {
+      handlePreview(event) {
+        console.log('handlePreview', event);
+      },
+      handleRemove(event) {
+        console.log('handleRemove', event);
+      },
+    }
+  }
+</script>
 ```
 :::
 
