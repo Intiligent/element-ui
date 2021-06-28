@@ -126,9 +126,9 @@
       & .el-submenu__title {
         background-color: $--color-white;
         float: none;
-        height: 36px;
-        line-height: 36px;
-        padding: 0 10px;
+        height: $--menu-item-height;
+        line-height: $--menu-item-height;
+        padding: 0 12px;
         color: $--color-text-secondary;
       }
       & .el-menu-item.is-active,
@@ -239,6 +239,7 @@
 
   @include e(title) {
     @include menu-item;
+    padding: $--menu-item-padding;
 
     &:hover {
       background-color: $--menu-item-hover-fill;

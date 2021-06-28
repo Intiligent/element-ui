@@ -108,7 +108,7 @@
 
   thead {
     color: $--table-header-font-color;
-    font-weight: 500;
+    font-weight: $--table-header-font-weight;
 
     &.is-group {
       th {
@@ -118,7 +118,7 @@
   }
 
   th, td {
-    padding: 12px 0;
+    padding: $--table-body-data-padding;
     min-width: 0;
     box-sizing: border-box;
     text-overflow: ellipsis;
@@ -194,8 +194,7 @@
       box-sizing: border-box;
       position: relative;
       vertical-align: middle;
-      padding-left: 10px;
-      padding-right: 10px;
+      padding: $--table-body-cell-padding-horizontal;
       width: 100%;
 
       &.highlight {
@@ -232,8 +231,11 @@
     white-space: normal;
     word-break: break-all;
     line-height: 23px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: $--table-body-cell-padding-horizontal;
+    padding-right: $--table-body-cell-padding-horizontal;
+    @if (mixin-exists(hook-table-body-cell)) {
+        @include hook-table-body-cell();
+    }
 
     &.el-tooltip {
       white-space: nowrap;

@@ -10,7 +10,7 @@
   white-space: nowrap;
   cursor: pointer;
   background: $--button-default-background-color;
-  border: $--border-base;
+  border: $--button-border;
   border-color: $--button-default-border-color;
   color: $--button-default-font-color;
   -webkit-appearance: none;
@@ -151,7 +151,11 @@
   @include m(mini) {
     @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, $--button-mini-border-radius);
     @include when(circle) {
-      padding: $--button-mini-padding-vertical;
+      padding: $--button-mini-circle-padding;
+    }
+    @include when(narrow) {
+      padding-left: $--button-mini-narrow-padding;
+      padding-right: $--button-mini-narrow-padding;
     }
   }
   @include m(text) {
@@ -184,7 +188,7 @@
 @include b(button-group) {
   @include utils-clearfix;
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: bottom;
 
   & > .el-button {
     float: left;
@@ -234,7 +238,7 @@
       z-index: 1;
     }
   }
-  
+
   & > .el-dropdown {
     & > .el-button {
       border-top-left-radius: 0;

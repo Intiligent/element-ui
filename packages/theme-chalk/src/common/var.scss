@@ -545,6 +545,7 @@ $--tab-item-height: 40px !default;
 -------------------------- */
 $--button-font-size: $--font-size-base !default;
 $--button-font-weight: $--font-weight-primary !default;
+$--button-border: $--border-base !default;
 $--button-border-radius: $--border-radius-base !default;
 $--button-padding-vertical: 12px !default;
 $--button-padding-horizontal: 20px !default;
@@ -562,6 +563,8 @@ $--button-mini-font-size: 12px !default;
 $--button-mini-border-radius: #{$--border-radius-base - 1} !default;
 $--button-mini-padding-vertical: 7px !default;
 $--button-mini-padding-horizontal: 15px !default;
+$--button-mini-circle-padding: 3px !default;
+$--button-mini-narrow-padding: 5px !default;
 
 $--button-default-font-color: $--color-text-regular !default;
 $--button-default-background-color: $--color-white !default;
@@ -622,11 +625,15 @@ $--dialog-padding-primary: 20px !default;
 $--table-border-color: $--border-color-lighter !default;
 $--table-border: 1px solid $--table-border-color !default;
 $--table-font-color: $--color-text-regular !default;
-$--table-header-font-color: $--color-text-secondary !default;
+$--table-header-font-color: $--color-text-primary !default;
+$--table-header-font-weight: 500 !default;
 $--table-row-hover-background-color: $--background-color-base !default;
 $--table-current-row-background-color: $--color-primary-light-9 !default;
 $--table-header-background-color: $--color-white !default;
 $--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, .12) !default;
+$--table-body-data-padding: 12px 0 !default;
+$--table-body-cell-padding-horizontal: 10px !default;
+@mixin hook-table-body-cell() {}
 
 /* Pagination
 -------------------------- */

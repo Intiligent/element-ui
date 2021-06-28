@@ -266,7 +266,6 @@
       const {
         active,
         opened,
-        paddingStyle,
         titleStyle,
         backgroundColor,
         rootMenu,
@@ -336,7 +335,7 @@
             on-click={this.handleClick}
             on-mouseenter={this.handleTitleMouseenter}
             on-mouseleave={this.handleTitleMouseleave}
-            style={[paddingStyle, titleStyle, { backgroundColor }]}
+            style={[titleStyle, { backgroundColor }]}
           >
             {$slots.title}
             <i class={[ 'el-submenu__icon-arrow', submenuTitleIcon ]}></i>

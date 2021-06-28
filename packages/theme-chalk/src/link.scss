@@ -2,10 +2,10 @@
 @import "common/var";
 
 $typeMap: (
-  primary: $--link-primary-font-color, 
-  danger: $--link-danger-font-color, 
-  success: $--link-success-font-color, 
-  warning: $--link-warning-font-color, 
+  primary: $--link-primary-font-color,
+  danger: $--link-danger-font-color,
+  success: $--link-success-font-color,
+  warning: $--link-warning-font-color,
   info: $--link-info-font-color);
 
 @include b(link) {
@@ -23,28 +23,22 @@ $typeMap: (
   font-weight: $--link-font-weight;
 
   @include when(underline) {
-    &:hover:after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      height: 0;
-      bottom: 0;
-      border-bottom: 1px solid $--link-default-active-color
+    &:hover {
+      text-decoration: underline;
     }
   }
 
   @include when(disabled) {
     cursor: not-allowed;
-  } 
+  }
 
   & [class*="el-icon-"] {
     & + span {
       margin-left: 5px;
     }
   }
-    
-    
+
+
   &.el-link--default  {
     color: $--link-default-font-color;
     &:hover {
@@ -77,5 +71,5 @@ $typeMap: (
       }
     }
   }
-    
+
 }

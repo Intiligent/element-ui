@@ -146,6 +146,9 @@ Besides default size, Button component provides three additional sizes for you t
   <el-button size="medium" round>Medium</el-button>
   <el-button size="small" round>Small</el-button>
   <el-button size="mini" round>Mini</el-button>
+  <el-button size="mini" icon="el-icon-close" round circle></el-button>
+  <el-button size="mini" type="danger" icon="el-icon-close" round circle></el-button>
+  <el-switch v-model="value2" active-color="#13ce66" inactive-color="#ff4949"></el-switch>
 </el-row>
 ```
 :::
@@ -158,6 +161,7 @@ Besides default size, Button component provides three additional sizes for you t
 | plain     | determine whether it's a plain button   | boolean    | — | false   |
 | round     | determine whether it's a round button   | boolean    | — | false   |
 | circle     | determine whether it's a circle button   | boolean    | — | false   |
+| narrow     | determine whether it's a narrow button   | boolean    | — | false   |
 | loading   | determine whether it's loading   | boolean    | — | false   |
 | disabled  | disable the button    | boolean   | —   | false   |
 | icon  | icon class name | string   |  —  |  —  |
