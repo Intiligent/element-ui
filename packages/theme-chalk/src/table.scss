@@ -508,6 +508,8 @@
     tr.current-row > td {
       background-color: $--table-current-row-background-color;
     }
+
+    tr.inactive-row { opacity: 0.6; }
   }
 
   @include e(column-resize-proxy) {

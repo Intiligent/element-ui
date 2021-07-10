@@ -141,7 +141,6 @@ p,
 ul,
 ol,
 dl,
-pre,
 address,
 fieldset,
 figure { margin-bottom: $--margin-default; }
@@ -260,12 +259,11 @@ template { display: none; }
     overflow: auto;
 }
 
-/* Position
+/* Display
  ========================================================================== */
-.el-position-relative { position: relative !important; }
-.el-position-absolute { position: absolute !important; }
-.el-position-fixed { position: fixed !important; }
-.el-position-z-index { z-index: 1; }
+.el-display-block {
+    display: block !important;
+}
 
 /* Padding spacing
  ========================================================================== */

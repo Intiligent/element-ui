@@ -633,17 +633,18 @@ $--table-header-background-color: $--color-white !default;
 $--table-fixed-box-shadow: 0 0 10px rgba(0, 0, 0, .12) !default;
 $--table-body-data-padding: 12px 0 !default;
 $--table-body-cell-padding-horizontal: 10px !default;
-@mixin hook-table-body-cell() {}
+// @mixin hook-table-body-cell() {}
 
 /* Pagination
 -------------------------- */
 $--pagination-font-size: 13px !default;
 $--pagination-background-color: $--color-white !default;
 $--pagination-font-color: $--color-text-primary !default;
-$--pagination-border-radius: 3px !default;
+$--pagination-border-radius: $--border-radius-base !default;
 $--pagination-button-color: $--color-text-primary !default;
-$--pagination-button-width: 35.5px !default;
-$--pagination-button-height: 28px !default;
+$--pagination-button-width: 32px !default;
+$--pagination-button-height: 32px !default;
+$--pagination-button-padding: 0 7px !default;
 $--pagination-button-disabled-color: $--color-text-placeholder !default;
 $--pagination-button-disabled-background-color: $--color-white !default;
 $--pagination-hover-color: $--color-primary !default;

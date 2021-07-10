@@ -65,17 +65,21 @@
 
   .btn-prev,
   .btn-next {
+    color: $--pagination-button-color;
+    text-align: center;
+    line-height: $--pagination-button-height;
     background: center center no-repeat;
     background-size: 16px;
     background-color: $--pagination-background-color;
     cursor: pointer;
     margin: 0;
-    color: $--pagination-button-color;
+    display: inline-block;
 
     .el-icon {
       display: block;
       font-size: 12px;
       font-weight: bold;
+      line-height: inherit;
     }
   }
 
@@ -84,7 +88,7 @@
   }
 
   .btn-next {
-    padding-left: 12px;    
+    padding-left: 12px;
   }
 
   .el-pager li.disabled {
@@ -168,7 +172,7 @@
     line-height: 18px;
     padding: 0 2px;
     height: $--pagination-button-height;
-      
+
     text-align: center;
     margin: 0 2px;
     box-sizing: border-box;
@@ -193,11 +197,11 @@
     .btn-prev,
     .btn-next,
     .el-pager li {
-      margin: 0 5px;
+      margin: 0 3px;
       background-color: $--color-info-lighter;
       color: $--color-text-regular;
-      min-width: 30px;
-      border-radius: 2px;
+      min-width: $--pagination-button-width;
+      border-radius: $--border-radius-base;
 
       &.disabled {
         color: $--color-text-placeholder;
@@ -248,7 +252,6 @@
   }
 
   li {
-    padding: 0 4px;
     background: $--pagination-background-color;
     vertical-align: top;
     display: inline-block;
@@ -260,6 +263,16 @@
     box-sizing: border-box;
     text-align: center;
     margin: 0;
+
+    &:not(.link) {
+      padding: $--pagination-button-padding;
+    }
+
+    a {
+      color: inherit;
+      display: block;
+      padding: $--pagination-button-padding;
+    }
 
     &.btn-quicknext,
     &.btn-quickprev {

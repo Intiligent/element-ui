@@ -22,6 +22,8 @@
     border: $--input-border;
     border-radius: $--input-border-radius;
     transition: $--border-transition-base;
+    font-family: inherit;
+    font-weight: inherit;
 
     &::placeholder {
       color: $--input-placeholder-color;
