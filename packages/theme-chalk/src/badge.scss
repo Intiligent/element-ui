@@ -22,7 +22,7 @@
     @include when(fixed) {
       position: absolute;
       top: 0;
-      right: #{($--badge-size - 4) / 2};
+      right: #{($--badge-size - 4) * 0.5};
       transform: translateY(-50%) translateX(100%);
 
       @include when(dot) {
