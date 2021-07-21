@@ -531,15 +531,18 @@ $--tab-border-line: 1px solid #e4e4e4 !default;
 $--tab-header-color-active: $--color-text-secondary !default;
 $--tab-header-color-hover: $--color-text-regular !default;
 $--tab-header-color: $--color-text-regular !default;
-$--tab-header-fill-active: $--color-primary-light-9 !default;
+$--tab-header-fill-active: inherit !default; // $--color-primary-light-9
 $--tab-header-fill-hover: rgba($--color-black, 0.06) !default;
+$--tab-header-border-radius: $--border-radius-base !default;
+$--tab-header-container-width-min: auto !default;
+$--tab-header-container-width-max: 280px !default;
+$--tab-header-horizontal-out-space: 10px !default;
 $--tab-vertical-header-width: 90px !default;
 $--tab-vertical-header-count-color: $--color-white !default;
 $--tab-vertical-header-count-fill: $--color-text-secondary !default;
 $--tab-item-height: 40px !default;
-@mixin hook-tab-header-panel {
-    color: red;
-}
+// @mixin hook-tab-header-panel {}
+// @mixin hook-tab-header-item {}
 
 /* Button
 -------------------------- */
@@ -688,6 +691,7 @@ $--tag-padding: 0 10px !default;
 /* Tree
 -------------------------- */
 $--tree-node-hover-background-color: $--background-color-base !default;
+$--tree-node-item-height: 36px !default;
 $--tree-font-color: $--color-text-regular !default;
 $--tree-expand-icon-color: $--color-text-placeholder !default;
 
@@ -696,6 +700,7 @@ $--tree-expand-icon-color: $--color-text-placeholder !default;
 $--dropdown-menu-box-shadow: $--box-shadow-light !default;
 $--dropdown-menuItem-hover-fill: $--color-primary-light-9 !default;
 $--dropdown-menuItem-hover-color: $--link-color !default;
+$--dropdown-menuItem-icon-margin: 12px !default;
 
 /* Badge
 -------------------------- */
