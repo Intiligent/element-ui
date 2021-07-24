@@ -129,6 +129,53 @@ Radio with button styles.
 ```
 :::
 
+### Stretch button style
+
+Radio with button stretch by width.
+
+:::demo You just need add prop `stretch`.
+```html
+<template>
+  <div style="width: 500px;">
+    <el-radio-group v-model="radio1" stretch>
+      <el-radio-button label="New York"></el-radio-button>
+      <el-radio-button label="Washington"></el-radio-button>
+      <el-radio-button label="Los Angeles"></el-radio-button>
+      <el-radio-button label="Chicago"></el-radio-button>
+    </el-radio-group>
+  </div>
+  <div style="width: 500px; margin-top: 20px">
+    <el-radio-group v-model="radio2" size="medium" stretch>
+      <el-radio-button label="New York" ></el-radio-button>
+      <el-radio-button label="Washington"></el-radio-button>
+      <el-radio-button label="Los Angeles"></el-radio-button>
+    </el-radio-group>
+  </div>
+  <div style="width: 500px; margin-top: 20px">
+    <el-radio-group v-model="radio3" size="small" stretch>
+      <el-radio-button label="New York"></el-radio-button>
+      <el-radio-button label="Washington" disabled ></el-radio-button>
+      <el-radio-button label="Los Angeles"></el-radio-button>
+      <el-radio-button label="Chicago"></el-radio-button>
+    </el-radio-group>
+  </div>
+</template>
+
+<script>
+  export default {
+    data () {
+      return {
+        radio1: 'New York',
+        radio2: 'New York',
+        radio3: 'New York',
+        radio4: 'New York'
+      };
+    }
+  }
+</script>
+```
+:::
+
 ### Vertical button style
 
 Radio with vertical position button styles.
@@ -253,6 +300,7 @@ name | native 'name' attribute | string    |      —         |     —
 value / v-model | binding value | string / number / boolean | — | —
 size | the size of radio buttons or bordered radios | string | medium / small / mini | —
 vertical  | vertical position of buttons | boolean   | — | false
+stretch  | stretch by width buttons group | boolean   | — | false
 disabled  | whether the nesting radios are disabled | boolean   | — | false
 text-color | font color when button is active | string   | — | #ffffff   |
 fill  | border and background color when button is active | string   | — | #409EFF   |

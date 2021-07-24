@@ -40,6 +40,10 @@
         type: Boolean,
         default: false
       },
+      stretch: {
+        type: Boolean,
+        default: false
+      },
       disabled: Boolean
     },
 
@@ -57,6 +61,9 @@
         const className = ['el-radio-group'];
         if (this.vertical) {
           className.push('el-radio-group--vertical');
+        }
+        if (this.stretch) {
+          className.push('el-radio-group--stretch');
         }
         return className;
       }

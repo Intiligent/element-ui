@@ -38,4 +38,15 @@
       }
     }
   }
+
+  @include m(stretch) {
+    display: flex;
+    flex-direction: row;
+    @include b(radio-button) {
+      flex: auto;
+      @include e(inner) {
+        width: 100%;
+      }
+    }
+  }
 }
