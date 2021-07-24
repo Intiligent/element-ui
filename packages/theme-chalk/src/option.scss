@@ -10,10 +10,23 @@
     overflow: hidden;
     text-overflow: ellipsis;
     color: $--select-option-color;
-    height: $--select-option-height;
+    min-height: $--select-option-height;
     line-height: $--select-option-height;
     box-sizing: border-box;
     cursor: pointer;
+
+    @include m(title) {
+      line-height: 26px;
+      padding-top: 6px;
+    }
+
+    @include m(subtitle) {
+      font-size: $--font-size-small;
+      font-weight: normal;
+      line-height: 20px;
+      color: $--color-muted;
+      padding-bottom: 8px;
+    }
 
     @include when(disabled) {
       color: $--select-option-disabled-color;

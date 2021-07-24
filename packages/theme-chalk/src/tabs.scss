@@ -123,6 +123,13 @@
       border-radius: 3px;
     }
 
+    [class^="el-icon-"]:not(.el-icon-close),
+    [class*=" el-icon-"]:not(.el-icon-close) {
+      margin-right: 10px;
+      color: $--color-text-secondary;
+      vertical-align: -1px;
+    }
+
     & .el-icon-close {
       border-radius: 50%;
       text-align: center;

@@ -81,6 +81,7 @@
       :validate-event="false"
       :class="{ 'is-focus': visible }"
       :tabindex="(multiple && filterable) ? '-1' : null"
+      :prefix-icon="prefixIcon"
       @focus="handleFocus"
       @blur="handleBlur"
       @keyup.native="debouncedOnInputChange"
@@ -302,6 +303,9 @@
       popperAppendToBody: {
         type: Boolean,
         default: true
+      },
+      prefixIcon: {
+        type: String
       }
     },
 

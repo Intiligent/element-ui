@@ -197,7 +197,7 @@ Multiple select uses tags to display selected options.
       :value="item.value">
     </el-option>
   </el-select>
-  
+
   <el-select
     v-model="value2"
     multiple
@@ -289,6 +289,108 @@ You can customize HTML templates for options.
       }
     }
   }
+</script>
+```
+:::
+
+### Custom template with icon
+
+You can customize HTML templates for options.
+
+:::demo Insert customized HTML templates into the slot of `el-option`.
+
+```html
+<template>
+    <el-select v-model="value" placeholder="Select" prefix-icon="el-icon-phone">
+        <el-option v-for="component in components" :key="component.name" :label="component.title" :value="component.name">
+            <div class="el-grid el-grid-sm el-flex el-flex-middle">
+                <div class="el-width-auto">
+                    <i :class="component.icon"></i>
+                </div>
+                <div class="el-width-expand">
+                    <div class="el-select-dropdown__item--title" v-text="component.title"></div>
+                    <div class="el-select-dropdown__item--subtitle" v-text="component.name"></div>
+                </div>
+            </div>
+        </el-option>
+    </el-select>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            components: [
+                {
+                    name: "input-text",
+                    title: "Input text",
+                    icon: "el-icon-edit"
+                },
+                {
+                    name: "textarea",
+                    title: "Textarea",
+                    icon: "el-icon-edit-outline"
+                },
+                {
+                    name: "input-number",
+                    title: "Input number",
+                    icon: "el-icon-c-scale-to-original"
+                },
+                {
+                    name: "wysiwyg",
+                    title: "WYSIWYG editor",
+                    icon: "el-icon-tickets"
+                },
+                {
+                    name: "toggle",
+                    title: "Toggle",
+                    icon: "el-icon-turn-off"
+                },
+                {
+                    name: "radio-group",
+                    title: "Radio group",
+                    icon: "el-icon-s-operation"
+                },
+                {
+                    name: "media-file",
+                    title: "File uploader",
+                    icon: "el-icon-paperclip"
+                },
+                {
+                    name: "datepicker",
+                    title: "Datepicker",
+                    icon: "el-icon-date"
+                },
+                {
+                    name: "datetimepicker",
+                    title: "Datetimepicker",
+                    icon: "el-icon-time"
+                },
+                {
+                    name: "select",
+                    title: "Select",
+                    icon: "el-icon-s-fold"
+                },
+                {
+                    name: "select-multiple",
+                    title: "Select multiple",
+                    icon: "el-icon-menu"
+                },
+                {
+                    name: "iconpicker",
+                    title: "Iconpicker",
+                    icon: "el-icon-picture-outline-round"
+                },
+                {
+                    name: "input-password",
+                    title: "Password",
+                    icon: "el-icon-lock"
+                }
+            ],
+            value: '',
+        }
+    }
+}
 </script>
 ```
 :::
@@ -553,6 +655,7 @@ If the binding value of Select is an object, make sure to assign `value-key` as 
 | default-first-option | select first matching option on enter key. Use with `filterable` or `remote` | boolean | - | false |
 | popper-append-to-body| whether to append the popper menu to body. If the positioning of the popper is wrong, you can try to set this prop to false | boolean | - | true |
 | automatic-dropdown | for non-filterable Select, this prop decides if the option menu pops up when the input is focused | boolean | - | false |
+| prefix-icon | prefix icon for Select. Select prop provide `prefix-icon` prop for input | string | - | - |
 
 ### Select Events
 | Event Name | Description | Parameters |
