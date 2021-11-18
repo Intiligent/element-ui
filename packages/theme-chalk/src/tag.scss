@@ -160,4 +160,8 @@
       transform: scale(.7);
     }
   }
+
+  & + .el-tag {
+    margin-left: 5px;
+  }
 }
