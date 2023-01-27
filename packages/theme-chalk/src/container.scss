@@ -12,6 +12,16 @@
 }
 
 /* Phone landscape and bigger */
+@media (min-width: $--xs) {
+
+    .el-container {
+        padding-left: $--container-padding-horizontal-xs;
+        padding-right: $--container-padding-horizontal-xs;
+    }
+
+}
+
+/* Phone landscape and bigger */
 @media (min-width: $--sm) {
 
     .el-container {

@@ -1,0 +1,134 @@
+@import "common/var";
+
+// Name:            Visibility
+// Description:     Utilities to show or hide content on breakpoints, hover or touch
+//
+// Component:       `el-hidden-*`
+//                  `el-visible-*`
+//                  `el-invisible`
+//                  `el-visible-toggle`
+//                  `el-hidden-hover`
+//                  `el-invisible-hover`
+//                  `el-hidden-touch`
+//                  `el-hidden-notouch`
+//
+// ========================================================================
+
+/*
+ * Hidden
+ * `hidden` attribute also set here to make it stronger
+ */
+
+[hidden],
+.el-hidden { display: none !important; }
+
+/* Phone landscape and bigger custome */
+@media (max-width: $--sm - 1) {
+    .el-hidden\@xs { display: none !important; }
+}
+
+/* Phone landscape and bigger custome */
+@media (min-width: $--sm) {
+    .el-hidden\@sm { display: none !important; }
+}
+
+/* Tablet landscape and bigger custome */
+@media (min-width: $--md) {
+    .el-hidden\@md { display: none !important; }
+}
+
+/* Desktop and bigger custome */
+@media (min-width: $--lg) {
+    .el-hidden\@lg { display: none !important; }
+}
+
+/* Large screen and bigger custome */
+@media (min-width: $--xl) {
+    .el-hidden\@xl { display: none !important; }
+}
+
+/*
+* Visible
+*/
+
+/* Phone portrait and smaller custome */
+@media (min-width: $--xs - 1) {
+    .el-visible\@xs { display: inherit !important; }
+}
+
+/* Phone portrait and smaller custome */
+@media (min-width: $--sm - 1) {
+    .el-visible\@sm { display: inherit !important; }
+}
+
+/* Phone landscape and smaller custome */
+@media (min-width: $--md - 1) {
+    .el-visible\@md { display: inherit !important; }
+}
+
+/* Tablet landscape and smaller custome */
+@media (min-width: $--lg - 1) {
+    .el-visible\@lg { display: inherit !important; }
+}
+
+/* Desktop and smaller custome */
+@media (min-width: $--xl - 1) {
+    .el-visible\@xl { display: inherit !important; }
+}
+
+
+/* Visibility
+ ========================================================================== */
+
+.el-invisible { visibility: hidden !important; }
+
+
+/* Hover
+ ========================================================================== */
+
+/*
+ * Hidden
+ * Can't use `display: hidden` because it's not focusable. This is accessible through keyboard.
+ */
+
+.el-visible-toggle:not(:hover):not(.el-hover) .el-hidden-hover:not(:focus) {
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+}
+
+/*
+ * Invisible
+ * Can't use `visibility: hidden` because it's not focusable. This is accessible through keyboard.
+ */
+
+.el-visible-toggle:not(:hover):not(.el-hover) .el-invisible-hover:not(:focus) { opacity: 0 !important; }
+
+
+/* Touch
+ ========================================================================== */
+
+/*
+ * Hide if primary pointing device has limited accuracy, e.g. a touch screen.
+ * Works on mobile browsers: Safari, Chrome and Android browser
+ */
+
+@media (pointer: coarse) {
+    .el-hidden-touch { display: none !important; }
+}
+
+/*
+ * Hide if primary pointing device is accurate, e.g. mouse.
+ * 1. Fallback for IE11 and Firefox, because `pointer` is not supported
+ * 2. Reset if supported
+ */
+
+/* 1 */
+.el-hidden-notouch { display: none !important; }
+
+@media (pointer: coarse) {
+    .el-hidden-notouch { display: block !important; }
+}
